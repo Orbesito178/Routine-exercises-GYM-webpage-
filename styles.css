@@ -7,9 +7,9 @@
 
 :root {
   /* Variables para consistencia */
-  --color-primary: black;
+  --color-primary: #00ff66;
   --color-text: #C2CDD5;
-  --color-bg: #303854;
+  --color-bg: black;
   --font-body: 'Georgia', serif;
   
   /* Espaciado fluido */
@@ -17,7 +17,7 @@
   --space-md: clamp(1rem, 4vw, 2rem);
   --space-lg: clamp(2rem, 8vw, 4rem);
   
-  /* Tipografía fluida — se adapta SOLA sin breakpoints */
+  /* Tipografía fluida */
   --text-base: clamp(1rem, 1.5vw, 1.125rem);
   --text-lg: clamp(1.25rem, 3vw, 1.75rem);
   --text-xl: clamp(2rem, 5vw, 4rem);
@@ -32,7 +32,7 @@ html {
 }
 
 img, video {
-  max-width: 100%;  /* Imágenes nunca se salen */
+  max-width: 100%; 
   height: auto;
   display: block;
 }
@@ -40,7 +40,7 @@ img, video {
 /* ===== CONTENEDOR ===== */
 .container {
   width: min(90%, 1200px); /* 90% en móvil, máx 1200px en desktop */
-  margin-inline: auto;     /* centrado horizontal moderno */
+  margin-inline: auto;  
   padding-inline: var(--space-sm);
 }
 
@@ -60,13 +60,13 @@ img, video {
   padding-block: 1rem;
 }
 
-.nav__links {
+.nav_links {
   display: flex;
   gap: 2rem;
   list-style: none;
 }
 
-.nav__toggle { display: none; } /* Solo aparece en móvil */
+.nav_toggle { display: none; } /* Solo aparece en móvil */
 
 /* ===== GRID RESPONSIVE ===== */
 .grid {
@@ -76,12 +76,59 @@ img, video {
   gap: var(--space-md);
 }
 
-h1{
-    text-align: center;
+/*Contenedor principal del index*/ 
+
+.hero {
+  min-height: 90vh;                
+  display: flex;
+  align-items: center;             
+  justify-content: center;         
+  text-align: center;
+  padding-block: var(--space-lg);
 }
 
-#epigrafe{
-    text-align:center
+.hero div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);            /* espacio entre título, epígrafe y botón */
+}
+
+.hero h1 {
+  font-size: var(--text-xl);       
+  color: var(--color-primary);     /* verde que ya tienes */
+  line-height: 1.2;
+}
+
+.hero #epigrafe {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* ===== BOTÓN ===== */
+.btn {
+  display: inline-block;
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--color-primary);
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: var(--text-base);
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+  margin-top: var(--space-sm);
+}
+
+.btn:hover {
+  opacity: 0.85;
+} 
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding-block: var(--space-md);
+  opacity: 0.5;
 }
 
 
