@@ -1,0 +1,113 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Variables para consistencia */
+  --color-primary: #2563eb;
+  --color-text: #1e293b;
+  --color-bg: #ffffff;
+  --font-body: 'Georgia', serif;
+  
+  /* Espaciado fluido */
+  --space-sm: clamp(0.5rem, 2vw, 1rem);
+  --space-md: clamp(1rem, 4vw, 2rem);
+  --space-lg: clamp(2rem, 8vw, 4rem);
+  
+  /* Tipografía fluida — se adapta SOLA sin breakpoints */
+  --text-base: clamp(1rem, 1.5vw, 1.125rem);
+  --text-lg: clamp(1.25rem, 3vw, 1.75rem);
+  --text-xl: clamp(2rem, 5vw, 4rem);
+}
+
+html {
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;  /* Imágenes nunca se salen */
+  height: auto;
+  display: block;
+}
+
+/* ===== CONTENEDOR ===== */
+.container {
+  width: min(90%, 1200px); /* 90% en móvil, máx 1200px en desktop */
+  margin-inline: auto;     /* centrado horizontal moderno */
+  padding-inline: var(--space-sm);
+}
+
+/* ===== NAV ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0,0,0,.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav__toggle { display: none; } /* Solo aparece en móvil */
+
+/* ===== GRID RESPONSIVE ===== */
+.grid {
+  display: grid;
+  /* Columnas automáticas: mínimo 280px, máximo igual — SIN BREAKPOINTS */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ===== BREAKPOINTS ===== */
+/* Mobile first: el CSS base es para móvil, luego se amplía */
+
+@media (max-width: 768px) {
+  .nav__links {
+    display: none; /* Oculto por defecto en móvil */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+  }
+
+  .nav__links.is-open {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: block; /* Mostrar hamburger */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet */
+}
+
+@media (min-width: 1025px) {
+  /* Desktop */
+}
