@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- CRÍTICO: sin esto el responsive no funciona en móvil -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Página</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/scripts.js" defer></script>
 </head>
 <body>
 
@@ -23,9 +23,12 @@
 
   <main>
     <section class="hero container">
-      <h1>Título principal</h1>
-      <p>Descripción breve</p>
-      <a href="#" class="btn">CTA</a>
+        <div>
+            <h1>Plan de entrenamiento y nutrición</h1>
+            <p id="epigrafe">Crea la persona que repetas y amas</p>
+            <a href="/planes.html" class="btn">Ver planes</a>
+        </div>
+      
     </section>
 
     <section class="grid-section container">

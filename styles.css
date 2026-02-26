@@ -7,8 +7,8 @@
 
 :root {
   /* Variables para consistencia */
-  --color-primary: #2563eb;
-  --color-text: #1e293b;
+  --color-primary: black;
+  --color-text: black;
   --color-bg: #ffffff;
   --font-body: 'Georgia', serif;
   
@@ -75,6 +75,16 @@ img, video {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
 }
+
+
+
+
+
+
+
+
+
+
 
 /* ===== BREAKPOINTS ===== */
 /* Mobile first: el CSS base es para móvil, luego se amplía */
