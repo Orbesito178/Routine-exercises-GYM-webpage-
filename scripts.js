@@ -4,8 +4,7 @@ function mostrar(id) {
 
     //Ocultar los 5 ejercicios y su menú "planes"
 
-    document.querySelectorAll("#cuadriceps, #pecho, #femoral, #espalda, #gluteos, #planes-ejercicios")
-    array.forEach(e => {
+    document.querySelectorAll("#cuadriceps, #pecho, #femoral, #espalda, #gluteos, #planes-ejercicios").forEach(e => {
         e.style.display = "none"
     });
 

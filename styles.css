@@ -208,7 +208,7 @@ img, video {
 /* Mobile first: el CSS base es para móvil, luego se amplía */
 
 @media (max-width: 768px) {
-  .nav__links {
+  .nav_links {
     display: none; /* Oculto por defecto en móvil */
     flex-direction: column;
     position: absolute;
@@ -219,11 +219,11 @@ img, video {
     padding: 1rem;
   }
 
-  .nav__links.is-open {
+  .nav_links.is-open {
     display: flex;
   }
 
-  .nav__toggle {
+  .nav_toggle {
     display: block; /* Mostrar hamburger */
     background: none;
     border: none;
