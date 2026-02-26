@@ -12,15 +12,19 @@
   <header class="site-header">
 
     <nav class="nav container">
+
       <a href="/" class="logo">Logo</a>
 
-      <ul class="nav__links">
-        <li><a href="#">Ejercicios</a></li>
-        <li><a href="#">Nutrición</a></li>
+      <ul class="nav_links">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/ejercicios.html">Ejercicios</a></li>
+        <li><a href="/ejercicios.html">Nutrición</a></li>
       </ul>
 
       <button class="nav__toggle" aria-label="Menú">☰</button>
+
     </nav>
+    
   </header>
 
   <main>
@@ -29,26 +33,26 @@
 
         <div class="grid">
 
-            <div class="card">
+            <div class="card" onclick="mostrar('cuadriceps')">
                 <a>Cuádriceps</a>
             </div>
             
-            <div class="card">
+            <div class="card" onclick="mostrar('pecho')">
                 <a>Pecho, hombro y tríceps</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" onclick="mostrar('femoral')">
                 <a>Femoral y glúteos</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" onclick="mostrar('espalda')">
                 <a>Espalda, bíceps y antebrazos</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" onclick="mostrar('gluteos')">
                 <a>Glúteos enfocados</a>
             </div>
 
@@ -213,7 +217,7 @@
 
     </section>
 
-    <section class="grid-section container" id="espalda">
+    <section class="grid-section container" id="gluteos">
 
         <div class="grid">
 
