@@ -8,8 +8,8 @@
 :root {
   /* Variables para consistencia */
   --color-primary: black;
-  --color-text: black;
-  --color-bg: #ffffff;
+  --color-text: #C2CDD5;
+  --color-bg: #303854;
   --font-body: 'Georgia', serif;
   
   /* Espaciado fluido */
@@ -75,6 +75,15 @@ img, video {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
 }
+
+h1{
+    text-align: center;
+}
+
+#epigrafe{
+    text-align:center
+}
+
 
 
 
