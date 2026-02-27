@@ -64,27 +64,27 @@
        
         <div class="grid">
 
-            <div class="card">
+            <div class="card" id="sentadilla" onclick="abrirModal('sentadilla')">
                 <a>Sentadilla libre</a>
             </div>
                 
-            <div class="card">
+            <div class="card" id="sentadillaS">
                 <a>Sentadilla sumo</a> 
             </div>
                 
-            <div class="card">
+            <div class="card" id="prensa">
                 <a>Prensa de piernas</a> 
             </div>
 
-            <div class="card">
+            <div class="card" id="extension">
                 <a>Extensión de cuádriceps</a>   
             </div>
 
-            <div class="card">
+            <div class="card" id="lunges">
                 <a>Lunges búlgaros</a> 
             </div>
 
-            <div class="card">
+            <div class="card" id="wallsit">
                 <a>Wall sit</a>
             </div>
 
@@ -96,38 +96,38 @@
 
         <div class="grid">
 
-            <div class="card">
+            <div class="card" id="press">
                 <a>Press banca</a>
             </div>
             
-            <div class="card">
+            <div class="card" id="pressI">
                 <a>Press inclinado mancuernas</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="pechoBajo">
                 <a>Pecho bajo en polea</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="elevaciones">
                 <a>Elevaciones laterales</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="pressMil">
                 <a>Press militar mancuernas</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="hombro">
                 <a>Hombro posterior</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="triceps">
                 <a>Tríceps unilateral polea</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="rompecraneos">
                 <a>Rompe cráneos trasnuca</a>
             </div>
 
@@ -139,34 +139,34 @@
 
         <div class="grid">
 
-            <div class="card">
+            <div class="card" is="smith">
                 <a>Sentadilla en máquina Smith</a>
             </div>
             
-            <div class="card">
+            <div class="card" id="prensaPierna">
                 <a>Prensa piernas abiertas</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="prensaPC">
                 <a>Prensa piernas cerradas</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="abductores">
                 <a>Abductores en máquina</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="hipThrust">
                 <a>Hip thrust</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="pesoMuerto">
                 <a>Peso muerto rumano</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="crab">
                 <a>Caminata de cangrejo</a>
             </div>
 
@@ -176,40 +176,40 @@
 
     <section class="grid-section container" id="espalda">
 
-        <div class="grid">
+        <div class="grid" id="jalonP">
 
             <div class="card">
                 <a>Jalón al pecho</a>
             </div>
             
-            <div class="card">
+            <div class="card" id="remo">
                 <a>Remo con barra</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="espaldaM">
                 <a>Espalda en máquina T</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="jalonPAC">
                 <a>Jalón al pecho agarre cerrado</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="curlB">
                 <a>Curl branquial con mancuernas</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="curlBiceps">
                 <a>Curl de biceps unilateral</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="extensionMuñecas">
                 <a>Extensión de muñeca</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="extensionMB">
                 <a>Extensiones de muñeca con barra</a>
             </div>
 
@@ -221,22 +221,52 @@
 
         <div class="grid">
 
-            <div class="card">
+            <div class="card" id="bulgaras">
                 <a>Búlgaras</a>
             </div>
             
-            <div class="card">
+            <div class="card" id="hipThrustB">
                 <a>Hip thrust con barra</a>
             </div>
 
             
-            <div class="card">
+            <div class="card" id="abductoresM">
                 <a>Abductores en máquina</a>
             </div>
 
             
-            <div class="card">
-                <a>Sentadilla libre (tiempo</a>
+            <div class="card" id="sentadillaLibre">
+                <a>Sentadilla libre (tiempo lento)</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div id="modal" class="modal-overlay" onclick="cerrarModal(event)">
+
+            <div class="modal-contenido">
+
+                <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+
+                <h2 id="modal-titulo"></h2>
+
+                <p id="modal-descripcion"></p>
+
+                <div id="modal-tips">
+
+                </div>
+                
+                <div class="modal-video">
+                    <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div>
+                    <a id="modal-link" target="_blank">Ver video en YouTube</a>
+                </div>
+
             </div>
 
         </div>

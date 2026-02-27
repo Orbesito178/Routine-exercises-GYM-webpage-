@@ -197,7 +197,132 @@ img, video {
   display: none;
 }
 
+.nav_toggle {
+  display: none;
+}
 
+/*Crear modal para los videos de ejercicios*/
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.modal-overlay.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  width: min(95%, 800px);        /* más ancho */
+  max-height: 90vh;              /* no se sale de la pantalla */
+  overflow-y: auto;              /* scroll interno si el contenido es largo */
+  position: relative;
+  animation: aparecer 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.modal-cerrar:hover {
+  color: var(--color-primary);
+}
+
+#modal-titulo {
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  padding-right: 2rem;           /* que no se tape con la X */
+}
+
+#modal-descripcion {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.modal-tips {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal-tips li {
+  color: var(--color-text);
+  font-size: var(--text-base);
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+#modal-link {
+  color: var(--color-primary);
+  font-size: var(--text-base);
+  word-break: break-all;
+  opacity: 0.7;
+}
+
+.modal-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-top: var(--space-sm);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+/* Modal en móvil */
+@media (max-width: 768px) {
+  .modal-contenido {
+    width: 100%;
+    max-height: 85vh;
+    border-radius: 12px;
+    padding: 1.2rem;
+  }
+
+  #modal-titulo {
+    font-size: var(--text-base);
+  }
+}
 
 
 
