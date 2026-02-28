@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rutina</title>
+
+  <link rel="stylesheet" href="/styles.css">
+  
+  <script src="/scripts.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <nav class="nav container">
+
+    <a href="/" class="logo">Logo</a>
+      
+    <ul class="nav_links">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/ejercicios.html">Ejercicios</a></li>
+        <li><a href="/nutricion.html">Nutrición</a></li>     
+    </ul>
+
+    </nav>
+
+  </header>
+
+  <main class="container">
+
+    <section class="hero-rutina">
+
+      <h1>Crea tu propia rutina</h1>
+      <p>Selecciona cuántos días y arma tu plan personalizado</p>
+
+    </section>
+
+    <section class="rutina">
+
+      <label for="numDias">¿Cuántos días por semana?</label>
+
+      <div class="dias-selector">
+        <button onclick="cambiarDias(-1)">-</button>
+        <span id="numDias">3</span>
+        <button onclick="cambiarDias(1)">+</button>
+      </div>
+
+      <button class="btn" onclick="generarDias()">Crear nueva rutina</button>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer container">
+    <p>© 2026</p>
+  </footer>
+
+</body>
+</html>

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planes de entrenamiento y nutrición</title>
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/scripts.js" defer></script>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./scripts.js" defer></script>
 </head>
 <body>
 
@@ -16,9 +16,10 @@
       <a href="/" class="logo">Logo</a>
 
       <ul class="nav_links">
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/ejercicios.html">Ejercicios</a></li>
-        <li><a href="/ejercicios.html">Nutrición</a></li>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./ejercicios.html">Ejercicios</a></li>
+        <li><a href="./ejercicios.html">Nutrición</a></li>
+        <li><a href="./rutina.html">Rutina</a></li>
       </ul>
 
       <button class="nav_toggle" aria-label="Menú">☰</button>
@@ -29,249 +30,164 @@
 
   <main>
 
-    <section class="grid-section container" id="planes-ejercicios">
+    <section class="grid-section container" id="trenes">
 
-        <div class="grid">
-
-            <div class="card" onclick="mostrar('cuadriceps')">
-                <a>Cuádriceps</a>
-            </div>
-            
-            <div class="card" onclick="mostrar('pecho')">
-                <a>Pecho, hombro y tríceps</a>
-            </div>
-
-            
-            <div class="card" onclick="mostrar('femoral')">
-                <a>Femoral y glúteos</a>
-            </div>
-
-            
-            <div class="card" onclick="mostrar('espalda')">
-                <a>Espalda, bíceps y antebrazos</a>
-            </div>
-
-            
-            <div class="card" onclick="mostrar('gluteos')">
-                <a>Glúteos enfocados</a>
-            </div>
-
-        </div>
+    <div class="grid">
+        <div class="card" onclick="mostrar('trenInferior')"><span>Tren inferior</span></div>
+        <div class="card" onclick="mostrar('trenSuperior')"><span>Tren superior</span></div>
+    </div>
 
     </section>
 
+    <!--Tren Inferior-->
+
+    <section class="grid-section container" id="trenInferior">
+
+    <div class="grid">
+        <div class="card" onclick="mostrar('cuadriceps')"><span>Cuádriceps</span></div>
+        <div class="card" onclick="mostrar('femoral')"><span>Femoral / Isquiotibiales</span></div>
+        <div class="card" onclick="mostrar('gluteos')"><span>Glúteos</span></div>
+    </div>
+
+    </section>
+
+    <!--Tren superior-->
+
+    <section class="grid-section container" id="trenSuperior">
+
+    <div class="grid">
+        <div class="card" onclick="mostrar('dorsal')"><span>Dorsal / Espalda</span></div>
+        <div class="card" onclick="mostrar('pectoral')"><span>Pectoral</span></div>
+        <div class="card" onclick="mostrar('hombros')"><span>Hombros</span></div>
+        <div class="card" onclick="mostrar('biceps')"><span>Bíceps</span></div>
+        <div class="card" onclick="mostrar('triceps')"><span>Tríceps</span></div>
+    </div>
+
+    </section>
+
+    <!-- Cuádriceps -->
     <section class="grid-section container" id="cuadriceps">
-       
-        <div class="grid">
 
-            <div class="card" id="sentadillaLibre" onclick="abrirModal('sentadilla')">
-                <a>Sentadilla libre</a>
-            </div>
-                
-            <div class="card" id="sentadillaSumo">
-                <a>Sentadilla sumo</a> 
-            </div>
-                
-            <div class="card" id="prensaPiernas">
-                <a>Prensa de piernas</a> 
-            </div>
-
-            <div class="card" id="extensionCuadriceps">
-                <a>Extensión de cuádriceps</a>   
-            </div>
-
-            <div class="card" id="lungesBulgaros">
-                <a>Lunges búlgaros</a> 
-            </div>
-
-            <div class="card" id="wallSit">
-                <a>Wall sit</a>
-            </div>
-
-        </div>
+    <div class="grid">
+        <div class="card" onclick="abrirModal('sentadillaLibre')"><span>Sentadilla libre</span></div>
+        <div class="card" onclick="abrirModal('sentadillaSmith')"><span>Sentadilla Smith</span></div>
+        <div class="card" onclick="abrirModal('prensa45')"><span>Prensa 45°</span></div>
+        <div class="card" onclick="abrirModal('extensionRodillas')"><span>Extensión de rodillas</span></div>
+        <div class="card" onclick="abrirModal('zancadas')"><span>Zancadas con barra</span></div>
+        <div class="card" onclick="abrirModal('lungesBulgaros')"><span>Lunges búlgaros</span></div>
+        <div class="card" onclick="abrirModal('sentadillaSumo')"><span>Sentadilla sumo</span></div>
+        <div class="card" onclick="abrirModal('saltossentadilla')"><span>Saltos de sentadilla</span></div>
+    </div>
 
     </section>
 
-    <section class="grid-section container" id="pecho">
-
-        <div class="grid">
-
-            <div class="card" id="pressBanca">
-                <a>Press banca</a>
-            </div>
-            
-            <div class="card" id="pressInclinado">
-                <a>Press inclinado mancuernas</a>
-            </div>
-
-            
-            <div class="card" id="pechoBajo">
-                <a>Pecho bajo en polea</a>
-            </div>
-
-            
-            <div class="card" id="elevacionesLaterales">
-                <a>Elevaciones laterales</a>
-            </div>
-
-            
-            <div class="card" id="pressMilitar">
-                <a>Press militar mancuernas</a>
-            </div>
-
-            <div class="card" id="hombroPosterior">
-                <a>Hombro posterior</a>
-            </div>
-
-            <div class="card" id="triceps">
-                <a>Tríceps unilateral polea</a>
-            </div>
-
-            <div class="card" id="rompeCraneos">
-                <a>Rompe cráneos trasnuca</a>
-            </div>
-
-        </div>
-
-    </section>
-
+    <!-- Femoral -->
     <section class="grid-section container" id="femoral">
 
-        <div class="grid">
-
-            <div class="card" is="smith">
-                <a>Sentadilla en máquina Smith</a>
-            </div>
-            
-            <div class="card" id="prensaPiernasAbiertas">
-                <a>Prensa piernas abiertas</a>
-            </div>
-
-            
-            <div class="card" id="prensaPiernasCerradas">
-                <a>Prensa piernas cerradas</a>
-            </div>
-
-            
-            <div class="card" id="abductores">
-                <a>Abductores en máquina</a>
-            </div>
-
-            
-            <div class="card" id="hipThrust">
-                <a>Hip thrust</a>
-            </div>
-
-            <div class="card" id="pesoMuerto">
-                <a>Peso muerto rumano</a>
-            </div>
-
-            <div class="card" id="crab">
-                <a>Caminata de cangrejo</a>
-            </div>
-
-        </div>
+    <div class="grid">
+        <div class="card" onclick="abrirModal('pesoMuertoBarra')"><span>Peso muerto con barra</span></div>
+        <div class="card" onclick="abrirModal('pesoMuertoUnilateral')"><span>Peso muerto unilateral en banco</span></div>
+        <div class="card" onclick="abrirModal('curlAcostado')"><span>Curl acostado (femoral)</span></div>
+    </div>
 
     </section>
 
-    <section class="grid-section container" id="espalda">
-
-        <div class="grid" id="jalonPecho">
-
-            <div class="card">
-                <a>Jalón al pecho</a>
-            </div>
-            
-            <div class="card" id="remo">
-                <a>Remo con barra</a>
-            </div>
-
-            
-            <div class="card" id="espaldaMaquinaT">
-                <a>Espalda en máquina T</a>
-            </div>
-
-            
-            <div class="card" id="jalonPechoAgarreCerrado">
-                <a>Jalón al pecho agarre cerrado</a>
-            </div>
-
-            
-            <div class="card" id="curlBranquial">
-                <a>Curl branquial con mancuernas</a>
-            </div>
-
-            <div class="card" id="curlBiceps">
-                <a>Curl de biceps unilateral</a>
-            </div>
-
-            <div class="card" id="extensionMuñeca">
-                <a>Extensión de muñeca</a>
-            </div>
-
-            <div class="card" id="extensionMuñecaBarra">
-                <a>Extensiones de muñeca con barra</a>
-            </div>
-
-        </div>
-
-    </section>
-
+    <!-- Glúteos -->
     <section class="grid-section container" id="gluteos">
 
-        <div class="grid">
-
-            <div class="card" id="bulgaras">
-                <a>Búlgaras</a>
-            </div>
-            
-            <div class="card" id="hipThrustBarra">
-                <a>Hip thrust con barra</a>
-            </div>
-
-            
-            <div class="card" id="abductoresMaquina">
-                <a>Abductores en máquina</a>
-            </div>
-
-            
-            <div class="card" id="sentadillaLibreGluteo">
-                <a>Sentadilla libre (tiempo lento)</a>
-            </div>
-
-        </div>
+    <div class="grid">
+        <div class="card" onclick="abrirModal('hipThrust')"><span>Hip thrust</span></div>
+        <div class="card" onclick="abrirModal('gluteoPatada')"><span>Glúteo patada en máquina</span></div>
+        <div class="card" onclick="abrirModal('gluteoMaquinaLumbar')"><span>Glúteo en máquina lumbar</span></div>
+        <div class="card" onclick="abrirModal('puentePelvisBarra')"><span>Puente de pelvis con barra</span></div>
+        <div class="card" onclick="abrirModal('puentePelvisMaquina')"><span>Puente de pelvis en máquina</span></div>
+        <div class="card" onclick="abrirModal('jalonInvertido')"><span>Jalón invertido polea baja</span></div>
+        <div class="card" onclick="abrirModal('aductor')"><span>Aductor en máquina</span></div>
+        <div class="card" onclick="abrirModal('abductor')"><span>Abductor en máquina</span></div>
+    </div>
 
     </section>
 
-    <section>
-
-        <div id="modal" class="modal-overlay" onclick="cerrarModal(event)">
-
-            <div class="modal-contenido">
-
-                <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
-
-                <h2 id="modal-titulo"></h2>
-
-                <p id="modal-descripcion"></p>
-
-                <div id="modal-tips">
-
-                </div>
-                
-                <div class="modal-video">
-                    <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div>
-                    <a id="modal-link" target="_blank">Ver video en YouTube</a>
-                </div>
-
-            </div>
-
-        </div>
+    <!-- Dorsal / Espalda -->
+    <section class="grid-section container" id="dorsal">
+        
+    <div class="grid">
+        <div class="card" onclick="abrirModal('jalonAltoCerrado')"><span>Jalón alto agarre cerrado</span></div>
+        <div class="card" onclick="abrirModal('jalonSentadoPolea')"><span>Jalón sentado polea baja</span></div>
+        <div class="card" onclick="abrirModal('jalonMaquinaHammer')"><span>Jalón máquina Hammer</span></div>
+        <div class="card" onclick="abrirModal('remoMancuerna')"><span>Remo con mancuerna</span></div>
+        <div class="card" onclick="abrirModal('polichilenos')"><span>Polichilenos</span></div>
+        <div class="card" onclick="abrirModal('jalonPieBrazos')"><span>Jalón de pie brazos extendidos</span></div>
+        <div class="card" onclick="abrirModal('bancoLumbar')"><span>Banco lumbar</span></div>
+    </div>
 
     </section>
+
+    <!-- Pectoral -->
+    <section class="grid-section container" id="pectoral">
+
+    <div class="grid">
+        <div class="card" onclick="abrirModal('pressAltoBarra')"><span>Press alto con barra</span></div>
+        <div class="card" onclick="abrirModal('aperturasMancuernas')"><span>Aperturas con mancuernas plano</span></div>
+        <div class="card" onclick="abrirModal('burpees')"><span>Burpees</span></div>
+    </div>
+
+    </section>
+
+    <!-- Hombros -->
+    <section class="grid-section container" id="hombros">
+
+    <div class="grid">
+        <div class="card" onclick="abrirModal('elevacionLateral')"><span>Elevación lateral con mancuernas</span></div>
+        <div class="card" onclick="abrirModal('elevacionFrontal')"><span>Elevación frontal con mancuernas</span></div>
+        <div class="card" onclick="abrirModal('pressMilitarMaquina')"><span>Press militar en máquina</span></div>
+        <div class="card" onclick="abrirModal('pressMilitarMancuernas')"><span>Press militar con mancuernas</span></div>
+        <div class="card" onclick="abrirModal('pecdekInvertido')"><span>Pecdek invertido</span></div>
+    </div>
+
+    </section>
+
+    <!-- Bíceps -->
+    <section class="grid-section container" id="biceps">
+
+    <div class="grid">
+        <div class="card" onclick="abrirModal('curlBarraPolea')"><span>Curl barra en polea baja</span></div>
+        <div class="card" onclick="abrirModal('curlMartillo')"><span>Curl con mancuernas martillo</span></div>
+        <div class="card" onclick="abrirModal('curlPieBarra')"><span>Curl de pie con barra</span></div>
+        <div class="card" onclick="abrirModal('curlPieMancuernas')"><span>Curl de pie con mancuernas</span></div>
+        <div class="card" onclick="abrirModal('curlPiePoleaBaja')"><span>Curl de pie polea baja</span></div>
+    </div>
+
+    </section>
+
+    <!-- Tríceps -->
+    <section class="grid-section container" id="triceps">
+
+    <div class="grid">
+        <div class="card" onclick="abrirModal('extensionPoleaSoga')"><span>Extensión polea alta soga</span></div>
+        <div class="card" onclick="abrirModal('patadaMulaMancuerna')"><span>Patada de mula con mancuerna</span></div>
+    </div>
+    
+    </section>
+
+<!-- ===================== MODAL ===================== -->
+
+<section>
+  <div id="modal" class="modal-overlay" onclick="cerrarModal(event)">
+    <div class="modal-contenido">
+      <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-descripcion"></p>
+      <div id="modal-tips"></div>
+      <div class="modal-video">
+        <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <a id="modal-link" target="_blank">Ver video en YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
 
   </main>
 

@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Rutinas GYM</title>
-
+  <title>Planes de entrenamiento y nutrición</title>
   <link rel="stylesheet" href="./styles.css">
-
   <script src="./scripts.js" defer></script>
-
 </head>
-
 <body>
 
   <header class="site-header">
@@ -38,14 +31,20 @@
 
   <main>
 
-    <section class="hero container">
+    <section class="grid-section container" id="planes">
 
-        <div>
-            <h1>Plan de entrenamiento y nutrición</h1>
-            <p id="epigrafe">Mi meta es que ames lo que veas en el espejo</p>
-            <a href="./planes.html" class="btn">Mejora tu condición</a>
+      <div class="grid" id="opciones">
+
+        <div class="card" onclick="location.href='/ejercicios.html'">            
+            <img src="" alt="Ejercicios">
+            <a class="link2" href="/.ejercicios.html">Tren superior</a>
         </div>
-      
+
+        <div class="card">
+            <img src="" alt="Nutrición">
+            <a class="link2" href="">Tren inferior</a>
+        </div>
+
     </section>
 
   </main>

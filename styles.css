@@ -306,23 +306,296 @@ img, video {
 }
 
 
+/* ===== RUTINAS ===== */
+.hero-rutina {
+  text-align: center;
+  padding-block: var(--space-lg);
+}
+
+.hero-rutina h1 {
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.hero-rutina p {
+  color: var(--color-text);
+  opacity: 0.7;
+  margin-top: var(--space-sm);
+}
+
+.rutina {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  text-align: center;
+}
+
+.rutina label {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.dias-selector {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dias-selector button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--color-primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.dias-selector button:hover {
+  background: rgba(0,255,102,0.1);
+  border-color: var(--color-primary);
+}
+
+.dias-selector span {
+  color: var(--color-primary);
+  font-size: var(--text-lg);
+  font-weight: bold;
+  min-width: 2rem;
+  text-align: center;
+}
 
 
 
+/* ===== SECCIONES DE EJERCICIOS (NUEVO SISTEMA DE 3 NIVELES) ===== */
 
-/* Modal en móvil */
-@media (max-width: 768px) {
-  .modal-contenido {
-    width: 100%;
-    max-height: 85vh;
-    border-radius: 12px;
-    padding: 1.2rem;
+/* Ocultar todas las secciones nuevas por defecto */
+#trenInferior,
+#trenSuperior,
+#cuadriceps,
+#femoral,
+#gluteos,
+#dorsal,
+#pectoral,
+#hombros,
+#biceps,
+#triceps {
+  display: none;
+}
+
+/* Espaciado general de todas las secciones del sistema */
+#trenes,
+#trenInferior,
+#trenSuperior,
+#cuadriceps,
+#femoral,
+#gluteos,
+#dorsal,
+#pectoral,
+#hombros,
+#biceps,
+#triceps {
+  padding-block: var(--space-lg);
+}
+
+/* ===== CABECERA DE SECCIÓN CON BOTÓN VOLVER ===== */
+
+.seccion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.seccion-header h2 {
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text);
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-volver:hover {
+  border-color: var(--color-primary);
+  background: rgba(0, 255, 102, 0.05);
+  color: var(--color-primary);
+}
+
+.btn-volver::before {
+  content: "←";
+  font-size: 1rem;
+}
+
+/* ===== CARDS DEL NIVEL 1 (TRENES) — MÁS GRANDES ===== */
+
+#trenes .card {
+  min-height: 260px;
+  font-size: var(--text-lg);
+}
+
+#trenes .card a {
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ===== CARDS DEL NIVEL 2 (PARTES DEL CUERPO) — TAMAÑO MEDIO ===== */
+
+#trenInferior .card,
+#trenSuperior .card {
+  min-height: 200px;
+}
+
+#trenInferior .card a,
+#trenSuperior .card a {
+  font-size: var(--text-base);
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ===== CARDS DEL NIVEL 3 (EJERCICIOS) — COMPACTAS ===== */
+
+#cuadriceps .card,
+#femoral .card,
+#gluteos .card,
+#dorsal .card,
+#pectoral .card,
+#hombros .card,
+#biceps .card,
+#triceps .card {
+  min-height: 140px;
+  padding: var(--space-md);
+}
+
+#cuadriceps .card a,
+#femoral .card a,
+#gluteos .card a,
+#dorsal .card a,
+#pectoral .card a,
+#hombros .card a,
+#biceps .card a,
+#triceps .card a {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+#cuadriceps .card:hover a,
+#femoral .card:hover a,
+#gluteos .card:hover a,
+#dorsal .card:hover a,
+#pectoral .card:hover a,
+#hombros .card:hover a,
+#biceps .card:hover a,
+#triceps .card:hover a {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+/* ===== INDICADOR DE NIVEL (BREADCRUMB) ===== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.5;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.breadcrumb span {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.breadcrumb::before {
+  content: "▸";
+  opacity: 0.4;
+}
+
+/* ===== GRID AJUSTADO PARA NIVELES ===== */
+
+/* Nivel 1: 2 columnas centradas */
+#trenes .grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+/* Nivel 2: 3 columnas */
+#trenInferior .grid,
+#trenSuperior .grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Nivel 3: más columnas porque son más compactas */
+#cuadriceps .grid,
+#femoral .grid,
+#gluteos .grid,
+#dorsal .grid,
+#pectoral .grid,
+#hombros .grid,
+#biceps .grid,
+#triceps .grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ===== ANIMACIÓN DE ENTRADA AL MOSTRAR SECCIÓN ===== */
+
+.grid-section.visible {
+  animation: entrar 0.3s ease both;
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
   }
-
-  #modal-titulo {
-    font-size: var(--text-base);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -364,7 +637,71 @@ img, video {
     min-height: 200px;
   }
 
+  .modal-contenido {
+    width: 100%;
+    max-height: 85vh;
+    border-radius: 12px;
+    padding: 1.2rem;
+  }
+
+  #modal-titulo {
+    font-size: var(--text-base);
+  }
+
+#trenes .grid,
+  #trenInferior .grid,
+  #trenSuperior .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #cuadriceps .grid,
+  #femoral .grid,
+  #gluteos .grid,
+  #dorsal .grid,
+  #pectoral .grid,
+  #hombros .grid,
+  #biceps .grid,
+  #triceps .grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  #trenes .card {
+    min-height: 160px;
+  }
+
+  #trenInferior .card,
+  #trenSuperior .card {
+    min-height: 140px;
+  }
+
+  #cuadriceps .card,
+  #femoral .card,
+  #gluteos .card,
+  #dorsal .card,
+  #pectoral .card,
+  #hombros .card,
+  #biceps .card,
+  #triceps .card {
+    min-height: 100px;
+    padding: var(--space-sm);
+  }
+
+  .seccion-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 769px) and (max-width: 1024px) {
   /* Tablet */
