@@ -222,6 +222,13 @@ function añadirGrupo(divDia, filaGrupos) {
   colGrupo.className = 'col-grupo'
   filaGrupos.appendChild(colGrupo)
 
+    // X para eliminar este grupo
+  const btnEliminar = document.createElement('button')
+  btnEliminar.textContent = '✕'
+  btnEliminar.className = 'btn-eliminar-dia'
+  btnEliminar.onclick = () => colGrupo.remove()
+  colGrupo.appendChild(btnEliminar)
+
   // Select de parte del cuerpo
   const selectGrupo = crearSelect(colGrupo, Object.keys(partesCuerpo), '+ Parte del cuerpo')
 
@@ -285,4 +292,136 @@ function limpiarDespuesDe(contenedor, elemento) {
     contenedor.removeChild(siguiente)
     siguiente = temp
   }
+}
+
+function exportarPDF() {
+  const { jsPDF } = window.jspdf
+  const doc = new jsPDF()
+
+  const verde = [0, 255, 102]
+  const gris = [194, 205, 213]
+  const blanco = [255, 255, 255]
+  const oscuro = [20, 20, 20]
+
+  const pageW = doc.internal.pageSize.getWidth()
+  let y = 20
+
+  // ===== TÍTULO =====
+  doc.setFillColor(0, 0, 0)
+  doc.rect(0, 0, pageW, 300, 'F')
+
+  doc.setFontSize(22)
+  doc.setTextColor(...verde)
+  doc.setFont('helvetica', 'bold')
+  doc.text('Mi Rutina de Entrenamiento', pageW / 2, y, { align: 'center' })
+  y += 6
+
+  doc.setDrawColor(...verde)
+  doc.setLineWidth(0.5)
+  doc.line(14, y, pageW - 14, y)
+  y += 10
+
+  // ===== ENCABEZADOS DE TABLA =====
+  const colDia      = 14
+  const colCuerpo   = 45
+  const colEjercicio= 85
+  const colLink     = 155
+  const colImg      = 175
+  const rowH        = 28
+
+  // Fondo encabezado
+  doc.setFillColor(0, 40, 20)
+  doc.rect(14, y - 5, pageW - 28, 10, 'F')
+
+  doc.setFontSize(8)
+  doc.setTextColor(...verde)
+  doc.setFont('helvetica', 'bold')
+  doc.text('DÍA',           colDia,       y)
+  doc.text('PARTE',         colCuerpo,    y)
+  doc.text('EJERCICIO',     colEjercicio, y)
+  doc.text('REPS',          148,          y)
+  doc.text('LINK',          colLink,      y)
+  y += 8
+
+  // ===== RECORRER DÍAS =====
+  const diasBloques = document.querySelectorAll('.dia-bloque')
+
+  diasBloques.forEach((divDia, index) => {
+
+    const selectDia = divDia.querySelector('.dia-cabecera select')
+    const nombreDia = selectDia ? selectDia.value : '—'
+
+    const columnas = divDia.querySelectorAll('.col-grupo')
+
+    columnas.forEach((col, i) => {
+      const selects = col.querySelectorAll('select')
+      if (selects.length < 3) return
+
+      const nombreGrupo    = selects[0].value
+      const claveEjercicio = selects[1].value
+      const reps           = selects[2].value
+
+      if (!claveEjercicio || !nombreGrupo) return
+
+      const claveGrupo = partesCuerpo[nombreGrupo]
+      const datos = indiceEjercicios[claveGrupo]?.[claveEjercicio]
+      if (!datos) return
+
+      // Nueva página si no hay espacio
+      if (y > 260) {
+        doc.addPage()
+        doc.setFillColor(0, 0, 0)
+        doc.rect(0, 0, pageW, 300, 'F')
+        y = 20
+      }
+
+      // Fondo alterno de filas
+      if ((index + i) % 2 === 0) {
+        doc.setFillColor(15, 15, 15)
+      } else {
+        doc.setFillColor(25, 25, 25)
+      }
+      doc.rect(14, y - 4, pageW - 28, rowH, 'F')
+
+      // Línea separadora
+      doc.setDrawColor(40, 40, 40)
+      doc.setLineWidth(0.2)
+      doc.line(14, y - 4, pageW - 28 + 14, y - 4)
+
+      // Texto — Día
+      doc.setFontSize(8)
+      doc.setFont('helvetica', 'bold')
+      doc.setTextColor(...verde)
+      doc.text(nombreDia, colDia, y + 4)
+
+      // Texto — Parte del cuerpo
+      doc.setFont('helvetica', 'normal')
+      doc.setTextColor(...gris)
+      doc.text(nombreGrupo, colCuerpo, y + 4)
+
+      // Texto — Ejercicio (puede ser largo, lo corta)
+      const tituloCorto = datos.titulo.length > 28
+        ? datos.titulo.substring(0, 25) + '...'
+        : datos.titulo
+      doc.setTextColor(...blanco)
+      doc.text(tituloCorto, colEjercicio, y + 4)
+
+      // Texto — Repeticiones
+      doc.setTextColor(...gris)
+      doc.text(reps || '—', 148, y + 4)
+
+      // Link clickeable
+      doc.setTextColor(...verde)
+      doc.textWithLink('Ver ↗', colLink, y + 4, { url: linksGrupo[claveGrupo] })
+
+      y += rowH
+    })
+  })
+
+  // ===== LÍNEA FINAL =====
+  doc.setDrawColor(...verde)
+  doc.setLineWidth(0.5)
+  doc.line(14, y, pageW - 14, y)
+
+  doc.save('mi-rutina.pdf')
 }
