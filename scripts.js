@@ -21,7 +21,9 @@ function mostrar(id) {
   }
 }
 
-//==============DICCIONARIOS============
+//==============DICCIONARIOS Y ARRAYS============
+
+trenes = ["Tren inferior", "Tren superior"]
 
 const indiceEjercicios = {
 
@@ -553,24 +555,13 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") cerrarModal();
 });
 
-//Cambiar el número de dias de rutinas.html
+diasNombres = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
 
-let numDiasActual = 3;
-
-function cambiarDias(valor) {
-  numDiasActual = Math.min(7, Math.max(1, numDiasActual + valor));
-  document.getElementById('numDias').textContent = numDiasActual;
-}
-
-
-
-function crearSelect(contenedor, opciones) {
-
+function crearSelect(contenedor, opciones, placeholder = '-- Selecciona --') {
   const select = document.createElement('select')
 
-  // Opción vacía por defecto
   const opcionVacia = document.createElement('option')
-  opcionVacia.textContent = '-- Selecciona --'
+  opcionVacia.textContent = placeholder
   opcionVacia.value = ''
   select.appendChild(opcionVacia)
 
@@ -582,9 +573,92 @@ function crearSelect(contenedor, opciones) {
   })
 
   contenedor.appendChild(select)
-
   return select
+}
 
+const partesCuerpo = {
+  'Cuádriceps':   'indicesCuadriceps',
+  'Femoral':      'indicesFemoral',
+  'Glúteos':      'indicesGluteos',
+  'Dorsal':       'indicesDorsal',
+  'Pectoral':     'indicesPectoral',
+  'Hombros':      'indicesHombros',
+  'Bíceps':       'indicesBiceps',
+  'Tríceps':      'indicesTriceps'
+}
+
+function crearSelectEjercicios(contenedor, claveGrupo) {
+  const grupoData = indiceEjercicios[claveGrupo]
+  const select = document.createElement('select')
+
+  const opcionVacia = document.createElement('option')
+  opcionVacia.textContent = '-- Selecciona ejercicio --'
+  opcionVacia.value = ''
+  select.appendChild(opcionVacia)
+
+  // Object.entries da [clave, valor] — muestra título bonito, guarda clave
+  Object.entries(grupoData).forEach(([clave, datos]) => {
+    const opcion = document.createElement('option')
+    opcion.value = clave
+    opcion.textContent = datos.titulo
+    select.appendChild(opcion)
+  })
+
+  contenedor.appendChild(select)
+  return select
+}
+
+diasNombres = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+
+function crearSelect(contenedor, opciones, placeholder = '-- Selecciona --') {
+  const select = document.createElement('select')
+
+  const opcionVacia = document.createElement('option')
+  opcionVacia.textContent = placeholder
+  opcionVacia.value = ''
+  select.appendChild(opcionVacia)
+
+  opciones.forEach(opcion => {
+    const elemento = document.createElement('option')
+    elemento.value = opcion
+    elemento.textContent = opcion
+    select.appendChild(elemento)
+  })
+
+  contenedor.appendChild(select)
+  return select
+}
+
+const parteTrabajar = {
+  'Cuádriceps':   'indicesCuadriceps',
+  'Femoral':      'indicesFemoral',
+  'Glúteos':      'indicesGluteos',
+  'Dorsal':       'indicesDorsal',
+  'Pectoral':     'indicesPectoral',
+  'Hombros':      'indicesHombros',
+  'Bíceps':       'indicesBiceps',
+  'Tríceps':      'indicesTriceps'
+}
+
+function crearSelectEjercicios(contenedor, claveGrupo) {
+  const grupoData = indiceEjercicios[claveGrupo]
+  const select = document.createElement('select')
+
+  const opcionVacia = document.createElement('option')
+  opcionVacia.textContent = '-- Selecciona ejercicio --'
+  opcionVacia.value = ''
+  select.appendChild(opcionVacia)
+
+  // Object.entries da [clave, valor] — muestra título bonito, guarda clave
+  Object.entries(grupoData).forEach(([clave, datos]) => {
+    const opcion = document.createElement('option')
+    opcion.value = clave
+    opcion.textContent = datos.titulo
+    select.appendChild(opcion)
+  })
+
+  contenedor.appendChild(select)
+  return select
 }
 
 function añadirDia() {
@@ -595,23 +669,38 @@ function añadirDia() {
   divDia.className = 'dia-bloque'
   contenedor.appendChild(divDia)
 
-  // Select de días
-  const selectDia = crearSelect(divDia, diasNombres)
+  const selectDia = crearSelect(divDia, diasNombres, '-- Selecciona día --')
 
-  // Al elegir día → aparece select de parte del cuerpo
   selectDia.addEventListener('change', () => {
-    const selectCuerpo = crearSelect(divDia, Object.keys(ejerciciosPorGrupo))
+    limpiarDespuesDe(divDia, selectDia)
 
-    // Al elegir parte del cuerpo → aparece select de ejercicios
-    selectCuerpo.addEventListener('change', () => {
-      const ejercicios = Object.keys(ejerciciosPorGrupo[selectCuerpo.value])
-      const selectEjercicio = crearSelect(divDia, ejercicios)
+    const selectGrupo = crearSelect(divDia, Object.keys(parteTrabajar), '+ Añadir parte a trabajar')
 
-      // Al elegir ejercicio → aparece select de repeticiones
+    selectGrupo.addEventListener('change', () => {
+      limpiarDespuesDe(divDia, selectGrupo)
+
+      const claveGrupo = partesCuerpo[selectGrupo.value]
+
+      // ← usa la función nueva que muestra títulos bonitos
+      const selectEjercicio = crearSelectEjercicios(divDia, claveGrupo)
+
       selectEjercicio.addEventListener('change', () => {
-        const reps = ['3x8', '3x10', '3x12', '4x8', '4x10', '4x12', '4x15', '5x8', '5x10', '5x12']
-        crearSelect(divDia, reps)
+        limpiarDespuesDe(divDia, selectEjercicio)
+
+        const reps = ['Sin Repetición','2x20','4x8','4x10','4x12','4x15','4x20','5x8','5x10','5x12','5x15','5x20','5x25','10x4','15x3','20x3','25x4']
+        crearSelect(divDia, reps, '-- Selecciona repeticiones --')
+
+        document.getElementById('seccion-exportar').style.display = 'block'
       })
     })
   })
+}
+
+function limpiarDespuesDe(contenedor, elemento) {
+  let siguiente = elemento.nextSibling
+  while (siguiente) {
+    const temp = siguiente.nextSibling
+    contenedor.removeChild(siguiente)
+    siguiente = temp
+  }
 }
