@@ -6,18 +6,13 @@
 }
 
 :root {
-  /* Variables para consistencia */
   --color-primary: #00ff66;
   --color-text: #C2CDD5;
   --color-bg: black;
   --font-body: 'Georgia', serif;
-  
-  /* Espaciado fluido */
   --space-sm: clamp(0.5rem, 2vw, 1rem);
   --space-md: clamp(1rem, 4vw, 2rem);
   --space-lg: clamp(2rem, 8vw, 4rem);
-  
-  /* Tipografía fluida */
   --text-base: clamp(1rem, 1.5vw, 1.125rem);
   --text-lg: clamp(1.25rem, 3vw, 1.75rem);
   --text-xl: clamp(2rem, 5vw, 4rem);
@@ -32,15 +27,15 @@ html {
 }
 
 img, video {
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
 /* ===== CONTENEDOR ===== */
 .container {
-  width: min(90%, 1200px); /* 90% en móvil, máx 1200px en desktop */
-  margin-inline: auto;  
+  width: min(90%, 1200px);
+  margin-inline: auto;
   padding-inline: var(--space-sm);
 }
 
@@ -66,23 +61,16 @@ img, video {
   list-style: none;
 }
 
-.nav_toggle { display: none; } /* Solo aparece en móvil */
-
-/* ===== GRID RESPONSIVE ===== */
-.grid {
-  display: grid;
-  /* Columnas automáticas: mínimo 280px, máximo igual — SIN BREAKPOINTS */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-md);
+.nav_toggle {
+  display: none;
 }
 
-/*Contenedor principal del index*/ 
-
+/* ===== HERO (INDEX) ===== */
 .hero {
-  min-height: 90vh;                
+  min-height: 90vh;
   display: flex;
-  align-items: center;             
-  justify-content: center;         
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding-block: var(--space-lg);
 }
@@ -91,12 +79,12 @@ img, video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-md);            /* espacio entre título, epígrafe y botón */
+  gap: var(--space-md);
 }
 
 .hero h1 {
-  font-size: var(--text-xl);       
-  color: var(--color-primary);     /* verde que ya tienes */
+  font-size: var(--text-xl);
+  color: var(--color-primary);
   line-height: 1.2;
 }
 
@@ -106,7 +94,7 @@ img, video {
   opacity: 0.8;
 }
 
-/* ===== BOTÓN ===== */
+/* ===== BOTONES ===== */
 .btn {
   display: inline-block;
   padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
@@ -116,13 +104,42 @@ img, video {
   border-radius: 8px;
   font-size: var(--text-base);
   font-weight: bold;
+  border: none;
+  cursor: pointer;
   transition: opacity 0.2s ease;
   margin-top: var(--space-sm);
 }
 
 .btn:hover {
   opacity: 0.85;
-} 
+}
+
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--color-text);
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-volver::before {
+  content: "←";
+  font-size: 1rem;
+}
+
+.btn-volver:hover {
+  border-color: var(--color-primary);
+  background: rgba(0,255,102,0.05);
+  color: var(--color-primary);
+}
 
 /* ===== FOOTER ===== */
 .site-footer {
@@ -131,25 +148,16 @@ img, video {
   opacity: 0.5;
 }
 
-
-/* ===== PÁGINA PLANES ===== */
-
-#planes2 {
-  min-height: 90vh;        
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-block: var(--space-lg);
-}
-
-#opciones {
-  grid-template-columns: 1fr 1fr;  
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
-  width: 100%;
 }
 
+/* ===== CARDS ===== */
 .card {
-  border: 1px solid rgba(255,255,255,0.1);  
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 16px;
   padding: var(--space-lg);
   display: flex;
@@ -159,7 +167,7 @@ img, video {
   gap: var(--space-sm);
   text-align: center;
   min-height: 300px;
-  background: rgba(255,255,255,0.03);  
+  background: rgba(255,255,255,0.03);
   transition: border-color 0.2s ease, background 0.2s ease;
   cursor: pointer;
 }
@@ -187,22 +195,22 @@ img, video {
   opacity: 0.8;
 }
 
-
-/* Ocultar todas las secciones de ejercicios */
-#cuadriceps,
-#pecho,
-#femoral,
-#espalda,
-#gluteos {
-  display: none;
+/* ===== PÁGINA PLANES ===== */
+#planes2 {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-lg);
 }
 
-.nav_toggle {
-  display: none;
+#opciones {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  width: 100%;
 }
 
-/*Crear modal para los videos de ejercicios*/
-
+/* ===== MODAL ===== */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -223,9 +231,9 @@ img, video {
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 16px;
   padding: clamp(1.5rem, 4vw, 2.5rem);
-  width: min(95%, 800px);        /* más ancho */
-  max-height: 90vh;              /* no se sale de la pantalla */
-  overflow-y: auto;              /* scroll interno si el contenido es largo */
+  width: min(95%, 800px);
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
   animation: aparecer 0.25s ease;
   display: flex;
@@ -257,7 +265,7 @@ img, video {
 #modal-titulo {
   font-size: var(--text-lg);
   color: var(--color-primary);
-  padding-right: 2rem;           /* que no se tape con la X */
+  padding-right: 2rem;
 }
 
 #modal-descripcion {
@@ -305,75 +313,7 @@ img, video {
   border-radius: 8px;
 }
 
-
-/* ===== RUTINAS ===== */
-.hero-rutina {
-  text-align: center;
-  padding-block: var(--space-lg);
-}
-
-.hero-rutina h1 {
-  font-size: var(--text-xl);
-  color: var(--color-primary);
-  line-height: 1.2;
-}
-
-.hero-rutina p {
-  color: var(--color-text);
-  opacity: 0.7;
-  margin-top: var(--space-sm);
-}
-
-.rutina {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  padding-block: var(--space-md);
-  text-align: center;
-}
-
-.rutina label {
-  color: var(--color-text);
-  opacity: 0.8;
-}
-
-.dias-selector {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.dias-selector button {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: var(--color-primary);
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 8px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.dias-selector button:hover {
-  background: rgba(0,255,102,0.1);
-  border-color: var(--color-primary);
-}
-
-.dias-selector span {
-  color: var(--color-primary);
-  font-size: var(--text-lg);
-  font-weight: bold;
-  min-width: 2rem;
-  text-align: center;
-}
-
-
-
-/* ===== SECCIONES DE EJERCICIOS (NUEVO SISTEMA DE 3 NIVELES) ===== */
-
-/* Ocultar todas las secciones nuevas por defecto */
+/* ===== SECCIONES DE EJERCICIOS ===== */
 #trenInferior,
 #trenSuperior,
 #cuadriceps,
@@ -387,7 +327,6 @@ img, video {
   display: none;
 }
 
-/* Espaciado general de todas las secciones del sistema */
 #trenes,
 #trenInferior,
 #trenSuperior,
@@ -401,8 +340,6 @@ img, video {
 #triceps {
   padding-block: var(--space-lg);
 }
-
-/* ===== CABECERA DE SECCIÓN CON BOTÓN VOLVER ===== */
 
 .seccion-header {
   display: flex;
@@ -418,105 +355,6 @@ img, video {
   color: var(--color-primary);
   font-weight: bold;
 }
-
-.btn-volver {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: var(--color-text);
-  padding: 0.5rem 1.1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  font-family: var(--font-body);
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
-  text-decoration: none;
-}
-
-.btn-volver:hover {
-  border-color: var(--color-primary);
-  background: rgba(0, 255, 102, 0.05);
-  color: var(--color-primary);
-}
-
-.btn-volver::before {
-  content: "←";
-  font-size: 1rem;
-}
-
-/* ===== CARDS DEL NIVEL 1 (TRENES) — MÁS GRANDES ===== */
-
-#trenes .card {
-  min-height: 260px;
-  font-size: var(--text-lg);
-}
-
-#trenes .card a {
-  font-size: var(--text-lg);
-  color: var(--color-primary);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* ===== CARDS DEL NIVEL 2 (PARTES DEL CUERPO) — TAMAÑO MEDIO ===== */
-
-#trenInferior .card,
-#trenSuperior .card {
-  min-height: 200px;
-}
-
-#trenInferior .card a,
-#trenSuperior .card a {
-  font-size: var(--text-base);
-  color: var(--color-primary);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* ===== CARDS DEL NIVEL 3 (EJERCICIOS) — COMPACTAS ===== */
-
-#cuadriceps .card,
-#femoral .card,
-#gluteos .card,
-#dorsal .card,
-#pectoral .card,
-#hombros .card,
-#biceps .card,
-#triceps .card {
-  min-height: 140px;
-  padding: var(--space-md);
-}
-
-#cuadriceps .card a,
-#femoral .card a,
-#gluteos .card a,
-#dorsal .card a,
-#pectoral .card a,
-#hombros .card a,
-#biceps .card a,
-#triceps .card a {
-  font-size: var(--text-base);
-  color: var(--color-text);
-  text-decoration: none;
-  opacity: 0.85;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-#cuadriceps .card:hover a,
-#femoral .card:hover a,
-#gluteos .card:hover a,
-#dorsal .card:hover a,
-#pectoral .card:hover a,
-#hombros .card:hover a,
-#biceps .card:hover a,
-#triceps .card:hover a {
-  color: var(--color-primary);
-  opacity: 1;
-}
-
-/* ===== INDICADOR DE NIVEL (BREADCRUMB) ===== */
 
 .breadcrumb {
   display: flex;
@@ -539,48 +377,51 @@ img, video {
   opacity: 0.4;
 }
 
-/* ===== GRID AJUSTADO PARA NIVELES ===== */
+/* Cards por nivel */
+#trenes .card { min-height: 260px; }
+#trenes .card a { font-size: var(--text-lg); color: var(--color-primary); font-weight: bold; text-decoration: none; }
 
-/* Nivel 1: 2 columnas centradas */
-#trenes .grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  max-width: 800px;
-  margin-inline: auto;
+#trenInferior .card,
+#trenSuperior .card { min-height: 200px; }
+#trenInferior .card a,
+#trenSuperior .card a { font-size: var(--text-base); color: var(--color-primary); font-weight: bold; text-decoration: none; }
+
+#cuadriceps .card, #femoral .card, #gluteos .card,
+#dorsal .card, #pectoral .card, #hombros .card,
+#biceps .card, #triceps .card { min-height: 140px; padding: var(--space-md); }
+
+#cuadriceps .card a, #femoral .card a, #gluteos .card a,
+#dorsal .card a, #pectoral .card a, #hombros .card a,
+#biceps .card a, #triceps .card a {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-/* Nivel 2: 3 columnas */
-#trenInferior .grid,
-#trenSuperior .grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+#cuadriceps .card:hover a, #femoral .card:hover a, #gluteos .card:hover a,
+#dorsal .card:hover a, #pectoral .card:hover a, #hombros .card:hover a,
+#biceps .card:hover a, #triceps .card:hover a {
+  color: var(--color-primary);
+  opacity: 1;
 }
 
-/* Nivel 3: más columnas porque son más compactas */
-#cuadriceps .grid,
-#femoral .grid,
-#gluteos .grid,
-#dorsal .grid,
-#pectoral .grid,
-#hombros .grid,
-#biceps .grid,
-#triceps .grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
+/* Grids por nivel */
+#trenes .grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 800px; margin-inline: auto; }
+#trenInferior .grid, #trenSuperior .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+#cuadriceps .grid, #femoral .grid, #gluteos .grid,
+#dorsal .grid, #pectoral .grid, #hombros .grid,
+#biceps .grid, #triceps .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* ===== ANIMACIÓN DE ENTRADA AL MOSTRAR SECCIÓN ===== */
-
+/* Animación de entrada */
 .grid-section.visible {
   animation: entrar 0.3s ease both;
 }
 
 @keyframes entrar {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== RUTINAS ===== */
@@ -671,6 +512,64 @@ img, video {
   color: var(--color-text);
 }
 
+.fila-grupos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+  flex: 1;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.rutina-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 120px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.rutina-link {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.rutina-link:hover {
+  opacity: 1;
+}
+
+.btn-agregar-grupo {
+  background: none;
+  border: 1px dashed rgba(0,255,102,0.25);
+  color: var(--color-primary);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+  align-self: flex-start;
+}
+
+.btn-agregar-grupo:hover {
+  background: rgba(0,255,102,0.05);
+}
+
 #seccion-exportar {
   text-align: center;
   padding-block: var(--space-lg);
@@ -682,6 +581,90 @@ img, video {
   padding: 1rem 3rem;
 }
 
+.dia-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.dia-cabecera select {
+  flex: 1;
+}
+
+.btn-eliminar-dia {
+  background: none;
+  border: 1px solid rgba(255,80,80,0.3);
+  color: rgba(255,80,80,0.6);
+  border-radius: 8px;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-eliminar-dia:hover {
+  background: rgba(255,80,80,0.1);
+  color: #ff4444;
+  border-color: #ff4444;
+}
+
+.dia-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.dia-cabecera select {
+  flex: 1;
+}
+
+.btn-eliminar-dia {
+  background: none;
+  border: 1px solid rgba(255,80,80,0.3);
+  color: rgba(255,80,80,0.6);
+  border-radius: 8px;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-eliminar-dia:hover {
+  background: rgba(255,80,80,0.1);
+  color: #ff4444;
+  border-color: #ff4444;
+}
+
+.dias-selector button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--color-primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.dias-selector button:hover {
+  background: rgba(0,255,102,0.1);
+  border-color: var(--color-primary);
+}
+
+.dias-selector span {
+  color: var(--color-primary);
+  font-size: var(--text-lg);
+  font-weight: bold;
+  min-width: 2rem;
+  text-align: center;
+}
 
 
 
@@ -692,7 +675,6 @@ img, video {
 
 
 
-  
 
 
 
@@ -703,14 +685,12 @@ img, video {
 
 
 
-
-
-/* ===== BREAKPOINTS ===== */
-/* Mobile first: el CSS base es para móvil, luego se amplía */
-
+/* ===== MÓVIL (max 768px) ===== */
 @media (max-width: 768px) {
+
+  /* Nav */
   .nav_links {
-    display: none; /* Oculto por defecto en móvil */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -718,6 +698,7 @@ img, video {
     right: 0;
     background: white;
     padding: 1rem;
+    z-index: 99;
   }
 
   .nav_links.is-open {
@@ -725,13 +706,14 @@ img, video {
   }
 
   .nav_toggle {
-    display: block; /* Mostrar hamburger */
+    display: block;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
   }
 
+  /* Planes */
   #opciones {
     grid-template-columns: 1fr;
   }
@@ -740,6 +722,7 @@ img, video {
     min-height: 200px;
   }
 
+  /* Modal */
   .modal-contenido {
     width: 100%;
     max-height: 85vh;
@@ -751,40 +734,25 @@ img, video {
     font-size: var(--text-base);
   }
 
-#trenes .grid,
+  /* Ejercicios */
+  #trenes .grid,
   #trenInferior .grid,
   #trenSuperior .grid {
     grid-template-columns: 1fr;
   }
 
-  #cuadriceps .grid,
-  #femoral .grid,
-  #gluteos .grid,
-  #dorsal .grid,
-  #pectoral .grid,
-  #hombros .grid,
-  #biceps .grid,
-  #triceps .grid {
+  #cuadriceps .grid, #femoral .grid, #gluteos .grid,
+  #dorsal .grid, #pectoral .grid, #hombros .grid,
+  #biceps .grid, #triceps .grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
-  #trenes .card {
-    min-height: 160px;
-  }
+  #trenes .card { min-height: 160px; }
+  #trenInferior .card, #trenSuperior .card { min-height: 140px; }
 
-  #trenInferior .card,
-  #trenSuperior .card {
-    min-height: 140px;
-  }
-
-  #cuadriceps .card,
-  #femoral .card,
-  #gluteos .card,
-  #dorsal .card,
-  #pectoral .card,
-  #hombros .card,
-  #biceps .card,
-  #triceps .card {
+  #cuadriceps .card, #femoral .card, #gluteos .card,
+  #dorsal .card, #pectoral .card, #hombros .card,
+  #biceps .card, #triceps .card {
     min-height: 100px;
     padding: var(--space-sm);
   }
@@ -794,22 +762,74 @@ img, video {
     align-items: flex-start;
   }
 
+  /* Rutinas */
+  .fila-grupos {
+    flex-direction: column;
+  }
+
+  .col-grupo {
+    min-width: 100%;
+  }
+
+  .btn-agregar-dia,
+  .btn-agregar-grupo {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
+/* ===== TABLET (769px - 1024px) ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* Tablet */
+
+  /* Nav sigue visible en tablet */
+  .nav_links {
+    gap: 1.2rem;
+  }
+
+  /* Ejercicios */
+  #trenes .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #trenInferior .grid,
+  #trenSuperior .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #cuadriceps .grid, #femoral .grid, #gluteos .grid,
+  #dorsal .grid, #pectoral .grid, #hombros .grid,
+  #biceps .grid, #triceps .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Rutinas */
+  .col-grupo {
+    min-width: 180px;
+  }
 }
 
+/* ===== DESKTOP (1025px+) ===== */
 @media (min-width: 1025px) {
-  /* Desktop */
+
+  /* Ejercicios */
+  #trenes .grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+
+  #trenInferior .grid,
+  #trenSuperior .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #cuadriceps .grid, #femoral .grid, #gluteos .grid,
+  #dorsal .grid, #pectoral .grid, #hombros .grid,
+  #biceps .grid, #triceps .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  /* Rutinas — columnas más anchas */
+  .col-grupo {
+    min-width: 220px;
+  }
 }
