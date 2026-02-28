@@ -222,7 +222,7 @@ function añadirGrupo(divDia, filaGrupos) {
   colGrupo.className = 'col-grupo'
   filaGrupos.appendChild(colGrupo)
 
-    // X para eliminar este grupo
+  // X para eliminar este grupo
   const btnEliminar = document.createElement('button')
   btnEliminar.textContent = '✕'
   btnEliminar.className = 'btn-eliminar-dia'
@@ -234,54 +234,82 @@ function añadirGrupo(divDia, filaGrupos) {
 
   selectGrupo.addEventListener('change', () => {
 
-    // Limpiar lo que había después del select de grupo en esta columna
+    // Limpiar ejercicios anteriores pero NO el select de grupo ni la X
     limpiarDespuesDe(colGrupo, selectGrupo)
 
     const claveGrupo = partesCuerpo[selectGrupo.value]
 
-    // Select de ejercicio con títulos bonitos
-    const selectEjercicio = crearSelectEjercicios(colGrupo, claveGrupo)
+    // Contenedor de ejercicios
+    const contenedorEjercicios = document.createElement('div')
+    contenedorEjercicios.className = 'ejercicios-lista'
+    colGrupo.appendChild(contenedorEjercicios)
 
-    selectEjercicio.addEventListener('change', () => {
+    // Añadir primer ejercicio automáticamente
+    añadirEjercicio(contenedorEjercicios, claveGrupo)
 
-      // Limpiar imagen y link anterior
-      limpiarDespuesDe(colGrupo, selectEjercicio)
+    // Botón añadir otro ejercicio
+    const btnAgregarEj = document.createElement('button')
+    btnAgregarEj.textContent = '+ Añadir ejercicio'
+    btnAgregarEj.className = 'btn-agregar-grupo'
+    btnAgregarEj.onclick = () => añadirEjercicio(contenedorEjercicios, claveGrupo)
+    colGrupo.appendChild(btnAgregarEj)
 
-      const claveEjercicio = selectEjercicio.value
-      const datos = indiceEjercicios[claveGrupo][claveEjercicio]
+    // Botón añadir otro grupo muscular al día
+    let btnAgregarGrupo = divDia.querySelector('.btn-agregar-grupo-dia')
+    if (!btnAgregarGrupo) {
+      btnAgregarGrupo = document.createElement('button')
+      btnAgregarGrupo.textContent = '+ Añadir grupo muscular'
+      btnAgregarGrupo.className = 'btn-agregar-grupo btn-agregar-grupo-dia'
+      btnAgregarGrupo.onclick = () => añadirGrupo(divDia, filaGrupos)
+      divDia.appendChild(btnAgregarGrupo)
+    }
 
-      // Imagen automática
-      const img = document.createElement('img')
-      img.src = datos.imagen
-      img.alt = datos.titulo
-      img.className = 'rutina-img'
-      colGrupo.appendChild(img)
+    document.getElementById('seccion-exportar').style.display = 'block'
+  })
+}
 
-      // Link automático al html de ejercicios
-      const link = document.createElement('a')
-      link.href = linksGrupo[claveGrupo]
-      link.textContent = 'Ver ejercicio ↗'
-      link.target = '_blank'
-      link.className = 'rutina-link'
-      colGrupo.appendChild(link)
+function añadirEjercicio(contenedor, claveGrupo) {
 
-      // Select de repeticiones
-      const reps = ['Sin Repetición','2x20','4x8','4x10','4x12','4x15','4x20','5x8','5x10','5x12','5x15','5x20','5x25','10x4','15x3','20x3','25x4']
-      crearSelect(colGrupo, reps, 'Repeticiones')
+  // Div que agrupa un ejercicio completo
+  const divEj = document.createElement('div')
+  divEj.className = 'ejercicio-item'
+  contenedor.appendChild(divEj)
 
-      // Botón añadir otro grupo al mismo día
-      let btnAgregar = divDia.querySelector('.btn-agregar-grupo')
-      if (!btnAgregar) {
-        btnAgregar = document.createElement('button')
-        btnAgregar.textContent = '+ Añadir grupo muscular'
-        btnAgregar.className = 'btn-agregar-grupo'
-        btnAgregar.onclick = () => añadirGrupo(divDia, filaGrupos)
-        divDia.appendChild(btnAgregar)
-      }
+  // X para eliminar este ejercicio
+  const btnEliminar = document.createElement('button')
+  btnEliminar.textContent = '✕'
+  btnEliminar.className = 'btn-eliminar-dia'
+  btnEliminar.onclick = () => divEj.remove()
+  divEj.appendChild(btnEliminar)
 
-      // Mostrar exportar
-      document.getElementById('seccion-exportar').style.display = 'block'
-    })
+  // Select de ejercicio
+  const selectEjercicio = crearSelectEjercicios(divEj, claveGrupo)
+
+  selectEjercicio.addEventListener('change', () => {
+
+    limpiarDespuesDe(divEj, selectEjercicio)
+
+    const claveEjercicio = selectEjercicio.value
+    const datos = indiceEjercicios[claveGrupo][claveEjercicio]
+
+    // Imagen
+    const img = document.createElement('img')
+    img.src = datos.imagen
+    img.alt = datos.titulo
+    img.className = 'rutina-img'
+    divEj.appendChild(img)
+
+    // Link
+    const link = document.createElement('a')
+    link.href = linksGrupo[claveGrupo]
+    link.textContent = 'Ver ejercicio ↗'
+    link.target = '_blank'
+    link.className = 'rutina-link'
+    divEj.appendChild(link)
+
+    // Repeticiones
+    const reps = ['Sin Repetición','2x20','4x8','4x10','4x12','4x15','4x20','5x8','5x10','5x12','5x15','5x20','5x25','10x4','15x3','20x3','25x4']
+    crearSelect(divEj, reps, 'Repeticiones')
   })
 }
 
