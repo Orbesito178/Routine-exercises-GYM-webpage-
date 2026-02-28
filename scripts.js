@@ -586,3 +586,32 @@ function crearSelect(contenedor, opciones) {
   return select
 
 }
+
+function añadirDia() {
+  const contenedor = document.getElementById('contenedor-dias')
+  if (contenedor.children.length >= 7) return
+
+  const divDia = document.createElement('div')
+  divDia.className = 'dia-bloque'
+  contenedor.appendChild(divDia)
+
+  // Select de días
+  const selectDia = crearSelect(divDia, diasNombres)
+
+  // Al elegir día → aparece select de parte del cuerpo
+  selectDia.addEventListener('change', () => {
+    const selectCuerpo = crearSelect(divDia, Object.keys(ejerciciosPorGrupo))
+
+    // Al elegir parte del cuerpo → aparece select de ejercicios
+    selectCuerpo.addEventListener('change', () => {
+      const ejercicios = Object.keys(ejerciciosPorGrupo[selectCuerpo.value])
+      const selectEjercicio = crearSelect(divDia, ejercicios)
+
+      // Al elegir ejercicio → aparece select de repeticiones
+      selectEjercicio.addEventListener('change', () => {
+        const reps = ['3x8', '3x10', '3x12', '4x8', '4x10', '4x12', '4x15', '5x8', '5x10', '5x12']
+        crearSelect(divDia, reps)
+      })
+    })
+  })
+}
