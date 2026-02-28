@@ -270,47 +270,58 @@ function añadirGrupo(divDia, filaGrupos) {
 
 function añadirEjercicio(contenedor, claveGrupo) {
 
-  // Div que agrupa un ejercicio completo
   const divEj = document.createElement('div')
   divEj.className = 'ejercicio-item'
   contenedor.appendChild(divEj)
 
-  // X para eliminar este ejercicio
+  // Fila superior: X + select ejercicio
+  const filaSelect = document.createElement('div')
+  filaSelect.style.cssText = 'display:flex; gap:0.5rem; align-items:center;'
+  divEj.appendChild(filaSelect)
+
   const btnEliminar = document.createElement('button')
   btnEliminar.textContent = '✕'
   btnEliminar.className = 'btn-eliminar-dia'
   btnEliminar.onclick = () => divEj.remove()
-  divEj.appendChild(btnEliminar)
+  filaSelect.appendChild(btnEliminar)
 
-  // Select de ejercicio
-  const selectEjercicio = crearSelectEjercicios(divEj, claveGrupo)
+  const selectEjercicio = crearSelectEjercicios(filaSelect, claveGrupo)
 
   selectEjercicio.addEventListener('change', () => {
 
-    limpiarDespuesDe(divEj, selectEjercicio)
+    const detalleAnterior = divEj.querySelector('.ejercicio-detalle')
+    if (detalleAnterior) detalleAnterior.remove()
+
+    // Quitar reps anterior si existe
+    const repsAnterior = filaSelect.querySelector('.select-reps')
+    if (repsAnterior) repsAnterior.remove()
 
     const claveEjercicio = selectEjercicio.value
     const datos = indiceEjercicios[claveGrupo][claveEjercicio]
 
-    // Imagen
+    // Repeticiones — misma fila que el select de ejercicio
+    const reps = ['Sin Repetición','2x20','4x8','4x10','4x12','4x15','4x20','5x8','5x10','5x12','5x15','5x20','5x25','10x4','15x3','20x3','25x4']
+    const selectReps = crearSelect(filaSelect, reps, 'Repeticiones')
+    selectReps.classList.add('select-reps')
+
+    // Fila inferior: imagen + link
+    const detalle = document.createElement('div')
+    detalle.className = 'ejercicio-detalle'
+    divEj.appendChild(detalle)
+
     const img = document.createElement('img')
     img.src = datos.imagen
     img.alt = datos.titulo
     img.className = 'rutina-img'
-    divEj.appendChild(img)
+    detalle.appendChild(img)
 
-    // Link
     const link = document.createElement('a')
     link.href = linksGrupo[claveGrupo]
-    link.textContent = 'Ver ejercicio ↗'
+    link.textContent = 'Ver ↗'
     link.target = '_blank'
     link.className = 'rutina-link'
-    divEj.appendChild(link)
-
-    // Repeticiones
-    const reps = ['Sin Repetición','2x20','4x8','4x10','4x12','4x15','4x20','5x8','5x10','5x12','5x15','5x20','5x25','10x4','15x3','20x3','25x4']
-    crearSelect(divEj, reps, 'Repeticiones')
-  })
+    detalle.appendChild(link)
+    })
 }
 
 function limpiarDespuesDe(contenedor, elemento) {
