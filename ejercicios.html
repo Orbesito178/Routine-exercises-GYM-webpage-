@@ -30,22 +30,28 @@
 
   <main>
 
-   <!--Partes del cuerpo-->
+    <!--Partes del cuerpo-->
+
+
 
     <section class="grid-section container">
 
     <div class="grid">
+
         <div class="card" onclick="mostrar('cuadriceps')"><span>Cuádriceps</span></div>
-        <div class="card" onclick="mostrar('femoral')"><span>Femoral / Isquiotibiales</span></div>
+        <div class="card" onclick="mostrar('piernas')"><span>Piernas</span></div>
         <div class="card" onclick="mostrar('gluteos')"><span>Glúteos</span></div>
-        <div class="card" onclick="mostrar('dorsal')"><span>Dorsal / Espalda</span></div>
-        <div class="card" onclick="mostrar('pectoral')"><span>Pectoral</span></div>
+        <div class="card" onclick="mostrar('espalda')"><span>Espalda</span></div>
+        <div class="card" onclick="mostrar('pecho')"><span>Pecho</span></div>
         <div class="card" onclick="mostrar('hombros')"><span>Hombros</span></div>
         <div class="card" onclick="mostrar('biceps')"><span>Bíceps</span></div>
         <div class="card" onclick="mostrar('triceps')"><span>Tríceps</span></div>
+        <div class="card" onclick="mostrar('cardio')"><span>Cardio</span></div>
+
     </div>
 
     </section>
+   
 
     <!-- Cuádriceps -->
     <section class="grid-section container" id="cuadriceps">
@@ -55,22 +61,24 @@
         <div class="card" onclick="abrirModal('sentadillaSmith')"><span>Sentadilla Smith</span></div>
         <div class="card" onclick="abrirModal('prensa45')"><span>Prensa 45°</span></div>
         <div class="card" onclick="abrirModal('extensionRodillas')"><span>Extensión de rodillas</span></div>
-        <div class="card" onclick="abrirModal('zancadas')"><span>Zancadas con barra</span></div>
-        <div class="card" onclick="abrirModal('lungesBulgaros')"><span>Lunges búlgaros</span></div>
-        <div class="card" onclick="abrirModal('sentadillaSumo')"><span>Sentadilla sumo</span></div>
-        <div class="card" onclick="abrirModal('saltossentadilla')"><span>Saltos de sentadilla</span></div>
+        <div class="card" onclick="abrirModal('zancadasBarra')"><span>Zancadas con barra</span></div>
+        <div class="card" onclick="abrirModal('haka')"><span>Haka</span></div>
+        
     </div>
 
     </section>
 
     <!-- Femoral -->
-    <section class="grid-section container" id="femoral">
+    <section class="grid-section container" id="piernas">
 
     <div class="grid">
         <div class="card" onclick="abrirModal('pesoMuertoBarra')"><span>Peso muerto con barra</span></div>
-        <div class="card" onclick="abrirModal('pesoMuertoUnilateral')"><span>Peso muerto unilateral en banco</span></div>
-        <div class="card" onclick="abrirModal('curlAcostado')"><span>Curl acostado (femoral)</span></div>
-    </div>
+        <div class="card" onclick="abrirModal('curlAcostado')"><span>Curl acostado</span></div>
+        <div class="card" onclick="abrirModal('zancadasEstaticas')"><span>Zancadas estáticas</span></div>
+        <div class="card" onclick="abrirModal('bulgaras')"><span>Búlgaras</span></div>
+        
+        
+      </div>
 
     </section>
 
@@ -86,37 +94,39 @@
         <div class="card" onclick="abrirModal('jalonInvertido')"><span>Jalón invertido polea baja</span></div>
         <div class="card" onclick="abrirModal('aductor')"><span>Aductor en máquina</span></div>
         <div class="card" onclick="abrirModal('abductor')"><span>Abductor en máquina</span></div>
+        <div class="card" onclick="abrirModal('sentadillaSumo')"><span>Sentadilla sumo</span></div>
+        <div class="card" onclick="abrirModal('pesoMuertoUnilateral')"><span>Peso muerto unilateral en banco</span></div>
     </div>
 
     </section>
 
     <!-- Dorsal / Espalda -->
-    <section class="grid-section container" id="dorsal">
+    <section class="grid-section container" id="espalda">
         
     <div class="grid">
-        <div class="card" onclick="abrirModal('jalonAltoCerrado')"><span>Jalón alto agarre cerrado</span></div>
-        <div class="card" onclick="abrirModal('jalonSentadoPolea')"><span>Jalón sentado polea baja</span></div>
+        <div class="card" onclick="abrirModal('jalonAltoCerrado')"><span>Jalón alto al pecho</span></div>
+        <div class="card" onclick="abrirModal('jalonSentadoPolea')"><span>Jalón sentado polea</span></div>
         <div class="card" onclick="abrirModal('jalonMaquinaHammer')"><span>Jalón máquina Hammer</span></div>
         <div class="card" onclick="abrirModal('remoMancuerna')"><span>Remo con mancuerna</span></div>
-        <div class="card" onclick="abrirModal('polichilenos')"><span>Polichilenos</span></div>
         <div class="card" onclick="abrirModal('jalonPieBrazos')"><span>Jalón de pie brazos extendidos</span></div>
         <div class="card" onclick="abrirModal('bancoLumbar')"><span>Banco lumbar</span></div>
+        <div class="card" onclick="abrirModal('prensa')"><span>Prensa</span></div>
     </div>
 
     </section>
 
     <!-- Pectoral -->
-    <section class="grid-section container" id="pectoral">
+    <section class="grid-section container" id="pecho">
 
     <div class="grid">
         <div class="card" onclick="abrirModal('pressAltoBarra')"><span>Press alto con barra</span></div>
         <div class="card" onclick="abrirModal('aperturasMancuernas')"><span>Aperturas con mancuernas plano</span></div>
-        <div class="card" onclick="abrirModal('burpees')"><span>Burpees</span></div>
     </div>
 
     </section>
 
     <!-- Hombros -->
+
     <section class="grid-section container" id="hombros">
 
     <div class="grid">
@@ -130,6 +140,7 @@
     </section>
 
     <!-- Bíceps -->
+
     <section class="grid-section container" id="biceps">
 
     <div class="grid">
@@ -143,6 +154,7 @@
     </section>
 
     <!-- Tríceps -->
+
     <section class="grid-section container" id="triceps">
 
     <div class="grid">
@@ -152,9 +164,23 @@
 
     </section>
 
+    <!-- Cardio -->
+
+    <section class="grid-section container" id="cardio">
+
+    <div class="grid">
+
+        <div class="card" onclick="abrirModal('saltossentadilla')"><span>Saltos de sentadilla</span></div>
+        <div class="card" onclick="abrirModal('polichilenos')"><span>Polichilenos</span></div>
+        <div class="card" onclick="abrirModal('burpees')"><span>Burpees</span></div>
+      </div><div class="card" onclick="abrirModal('trote')"><span>Trote</span></div>
+
+    </section>
+
 <!-- ===================== MODAL ===================== -->
 
 <section>
+  
   <div id="modal" class="modal-overlay" onclick="cerrarModal(event)">
     <div class="modal-contenido">
       <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
@@ -169,6 +195,7 @@
       </div>
     </div>
   </div>
+  
 </section>
 
   </main>
