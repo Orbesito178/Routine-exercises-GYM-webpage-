@@ -472,3 +472,12 @@ function exportarPDF() {
 
   doc.save('mi-rutina.pdf')
 }
+
+const navToggle = document.querySelector('.nav_toggle')
+const navLinks = document.querySelector('.nav_links')
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('is-open')
+  })
+}

@@ -44,8 +44,9 @@ img, video {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: white;
-  box-shadow: 0 1px 8px rgba(0,0,0,.08);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 102, 0.1);
 }
 
 .nav {
@@ -55,17 +56,72 @@ img, video {
   padding-block: 1rem;
 }
 
+.logo {
+  font-size: var(--text-lg);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
 .nav_links {
   display: flex;
   gap: 2rem;
   list-style: none;
 }
 
-.nav_toggle {
-  display: none;
+.nav_links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--text-base);
+  opacity: 0.8;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  position: relative;
 }
 
-/* ===== HERO (INDEX) ===== */
+.nav_links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.2s ease;
+}
+
+.nav_links a:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.nav_links a:hover::after {
+  width: 100%;
+}
+
+.nav_toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  color: var(--color-primary);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav_toggle:hover {
+  background: rgba(0, 255, 102, 0.08);
+  border-color: var(--color-primary);
+}
+
+/* ===== HERO ===== */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -177,6 +233,17 @@ img, video {
   background: rgba(0,255,102,0.05);
 }
 
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card img[src=""] {
+  display: none;
+}
+
 .card-texto {
   color: var(--color-text);
   font-size: var(--text-base);
@@ -196,14 +263,6 @@ img, video {
 }
 
 /* ===== PÁGINA PLANES ===== */
-#planes2 {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-block: var(--space-lg);
-}
-
 #opciones {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
@@ -314,17 +373,13 @@ img, video {
 }
 
 /* ===== SECCIONES DE EJERCICIOS ===== */
-#trenInferior,
-#trenSuperior,
-#cuadriceps,
-#femoral,
-#gluteos,
-#dorsal,
-#pectoral,
-#hombros,
-#biceps,
-#triceps {
+.grid-section {
   display: none;
+}
+
+#partes-cuerpo,
+#planes {
+  display: block;
 }
 
 #trenes,
@@ -512,6 +567,36 @@ img, video {
   color: var(--color-text);
 }
 
+.dia-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.dia-cabecera select {
+  flex: 1;
+}
+
+.btn-eliminar-dia {
+  background: none;
+  border: 1px solid rgba(255,80,80,0.3);
+  color: rgba(255,80,80,0.6);
+  border-radius: 8px;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-eliminar-dia:hover {
+  background: rgba(255,80,80,0.1);
+  color: #ff4444;
+  border-color: #ff4444;
+}
+
 .fila-grupos {
   display: flex;
   flex-direction: row;
@@ -532,12 +617,44 @@ img, video {
   padding: 0.75rem;
 }
 
-.rutina-img {
+.ejercicios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   width: 100%;
-  border-radius: 8px;
+}
+
+.ejercicio-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 0.75rem;
+}
+
+.ejercicio-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.ejercicio-detalle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ejercicio-detalle .rutina-img {
+  width: 80px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 6px;
   object-fit: cover;
-  height: 120px;
-  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.ejercicio-detalle .rutina-link {
+  flex-shrink: 0;
 }
 
 .rutina-link {
@@ -570,75 +687,10 @@ img, video {
   background: rgba(0,255,102,0.05);
 }
 
-#seccion-exportar {
-  text-align: center;
-  padding-block: var(--space-lg);
-  width: 100%;
-}
-
-.btn-exportar {
-  font-size: var(--text-lg);
-  padding: 1rem 3rem;
-}
-
-.dia-cabecera {
+.dias-selector {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-.dia-cabecera select {
-  flex: 1;
-}
-
-.btn-eliminar-dia {
-  background: none;
-  border: 1px solid rgba(255,80,80,0.3);
-  color: rgba(255,80,80,0.6);
-  border-radius: 8px;
-  width: 2.2rem;
-  height: 2.2rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.btn-eliminar-dia:hover {
-  background: rgba(255,80,80,0.1);
-  color: #ff4444;
-  border-color: #ff4444;
-}
-
-.dia-cabecera {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-.dia-cabecera select {
-  flex: 1;
-}
-
-.btn-eliminar-dia {
-  background: none;
-  border: 1px solid rgba(255,80,80,0.3);
-  color: rgba(255,80,80,0.6);
-  border-radius: 8px;
-  width: 2.2rem;
-  height: 2.2rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.btn-eliminar-dia:hover {
-  background: rgba(255,80,80,0.1);
-  color: #ff4444;
-  border-color: #ff4444;
+  gap: 1.5rem;
 }
 
 .dias-selector button {
@@ -666,43 +718,49 @@ img, video {
   text-align: center;
 }
 
-
-.ejercicio-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 0.75rem;
+#seccion-exportar {
+  text-align: center;
+  padding-block: var(--space-lg);
+  width: 100%;
 }
 
-.ejercicio-item:first-child {
-  border-top: none;
-  padding-top: 0;
+.btn-exportar {
+  font-size: var(--text-lg);
+  padding: 1rem 3rem;
 }
 
-/* Fila horizontal con imagen, link y repeticiones */
-.ejercicio-detalle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
 
-.ejercicio-detalle .rutina-img {
-  width: 80px;
-  height: 60px;
-  flex-shrink: 0;
-}
 
-.ejercicio-detalle .rutina-link {
-  flex-shrink: 0;
-}
 
-.ejercicio-detalle select {
-  flex: 1;
-  min-width: 120px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -723,32 +781,45 @@ img, video {
 /* ===== MÓVIL (max 768px) ===== */
 @media (max-width: 768px) {
 
-  /* Nav */
+  .nav_toggle {
+    display: block;
+  }
+
   .nav_links {
     display: none;
     flex-direction: column;
+    gap: 0;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
-    padding: 1rem;
-    z-index: 99;
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid rgba(0, 255, 102, 0.1);
+    padding: 1rem 0;
   }
 
   .nav_links.is-open {
     display: flex;
   }
 
-  .nav_toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  .nav_links li {
+    width: 100%;
   }
 
-  /* Planes */
+  .nav_links a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    opacity: 1;
+  }
+
+  .nav_links a:hover {
+    background: rgba(0, 255, 102, 0.05);
+  }
+
+  .nav_links a::after {
+    display: none;
+  }
+
   #opciones {
     grid-template-columns: 1fr;
   }
@@ -757,7 +828,6 @@ img, video {
     min-height: 200px;
   }
 
-  /* Modal */
   .modal-contenido {
     width: 100%;
     max-height: 85vh;
@@ -769,7 +839,6 @@ img, video {
     font-size: var(--text-base);
   }
 
-  /* Ejercicios */
   #trenes .grid,
   #trenInferior .grid,
   #trenSuperior .grid {
@@ -797,7 +866,6 @@ img, video {
     align-items: flex-start;
   }
 
-  /* Rutinas */
   .fila-grupos {
     flex-direction: column;
   }
@@ -816,12 +884,10 @@ img, video {
 /* ===== TABLET (769px - 1024px) ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  /* Nav sigue visible en tablet */
   .nav_links {
     gap: 1.2rem;
   }
 
-  /* Ejercicios */
   #trenes .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -837,7 +903,6 @@ img, video {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
-  /* Rutinas */
   .col-grupo {
     min-width: 180px;
   }
@@ -846,7 +911,6 @@ img, video {
 /* ===== DESKTOP (1025px+) ===== */
 @media (min-width: 1025px) {
 
-  /* Ejercicios */
   #trenes .grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 800px;
@@ -863,7 +927,6 @@ img, video {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  /* Rutinas — columnas más anchas */
   .col-grupo {
     min-width: 220px;
   }
