@@ -99,12 +99,11 @@
         
     <div class="grid">
         <div class="card" onclick="abrirModal('jalonAltoCerrado')"><img src="src/jalon cerrado.png" alt="Jalón alto al pecho"><span>Jalón alto al pecho</span></div>
-        <div class="card" onclick="abrirModal('jalonSentadoPolea')"><img src="src/jalon sentado polea.jpeg" alt="Jalón sentado polea"><span>Jalón sentado polea</span></div>
+        <div class="card" onclick="abrirModal('jalonSentadoPolea')"><img src="src/remo polea baja.jpeg" alt="Jalón sentado polea"><span>Jalón sentado polea</span></div>
         <div class="card" onclick="abrirModal('jalonMaquinaHammer')"><img src="src/jalon maquina hammer.jpeg" alt="Jalón máquina Hammer"><span>Jalón máquina Hammer</span></div>
         <div class="card" onclick="abrirModal('remoMancuerna')"><img src="src/remo mancuerna.png" alt="Remo con mancuerna"><span>Remo con mancuerna</span></div>
         <div class="card" onclick="abrirModal('jalonPieBrazos')"><img src="src/jalon al pie brazos extendidos.png" alt="Jalón de pie brazos extendidos"><span>Jalón de pie brazos extendidos</span></div>
         <div class="card" onclick="abrirModal('bancoLumbar')"><img src="src/banco lumbar.jpeg" alt="Banco lumbar"><span>Banco lumbar</span></div>
-        <div class="card" onclick="abrirModal('prensa')"><img src="src/prensa.png" alt="Prensa"><span>Prensa</span></div>
     </div>
 
     </section>
@@ -171,19 +170,20 @@
 <section>
   
   <div id="modal" class="modal-overlay" onclick="cerrarModal(event)">
-    <div class="modal-contenido">
-      <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
-      <h2 id="modal-titulo"></h2>
-      <p id="modal-descripcion"></p>
-      <div id="modal-tips"></div>
-      <div class="modal-video">
-        <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div>
-        <a id="modal-link" target="_blank">Ver video en YouTube</a>
-      </div>
+  <div class="modal-contenido">
+    <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+    <h2 id="modal-titulo"></h2>
+    <img id="modal-imagen" src="" alt="" class="modal-img" />
+    <p id="modal-descripcion"></p>
+    <div id="modal-tips"></div>
+    <div class="modal-video">
+      <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div>
+      <a id="modal-link" target="_blank">Ver video en YouTube</a>
     </div>
   </div>
+</div>
   
 </section>
 
