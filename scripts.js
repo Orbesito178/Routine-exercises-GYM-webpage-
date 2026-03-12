@@ -512,7 +512,7 @@ function exportarPDF() {
         // LINK
         doc.setFontSize(7)
         doc.setTextColor(...verde)
-        const urlLink = `https://Orbesito178.github.io/Routine-exercises-GYM-webpage-/${linksGrupo[claveGrupo]}?modal=${claveEjercicio}`
+        const urlLink = `https://Orbesito178.github.io/Routine-exercises-GYM-webpage-!/${linksGrupo[claveGrupo]}?modal=${claveEjercicio}`
         doc.textWithLink('Ver ↗', col.link, textY, { url: urlLink })
 
         y += rowH
