@@ -512,3 +512,82 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => abrirModal(modalId), 200)
   }
 })
+
+
+// ===== DATOS NUTRICIÓN =====
+const datosNutricion = {
+  comida1: {
+    titulo: 'Comida 1',
+    ingredientes: [
+      '4 huevos (2 completos + 2 solo claras)',
+      '4 galletitas de arroz',
+      '1 cucharada de mermelada dietética',
+      '50 gr de sandía',
+      '1 taza de café',
+      'Omega 3'
+    ],
+    preparacion: 'Cocina los huevos a tu gusto — revueltos o pochados. Acompaña con las galletitas de arroz untadas con mermelada dietética. Sirve la sandía en trozos frescos al lado. Toma el café sin azúcar o con endulzante y el Omega 3 junto con la comida.'
+  },
+  comida2: {
+    titulo: 'Comida 2',
+    ingredientes: [
+      '120 gr de pechuga de pollo',
+      '100 gr de ensalada mixta (lechuga, tomate, pepino)',
+      '500 ml de agua'
+    ],
+    preparacion: 'Cocina el pollo a la plancha con sal, pimienta y un toque de limón. Prepara la ensalada mixta con una pizca de sal y un chorrito de vinagre o aceite de oliva. Acompaña con agua y consume dentro de las 3 horas del desayuno.'
+  },
+  comida3: {
+    titulo: 'Comida 3',
+    ingredientes: [
+      '120 gr de carne o pollo',
+      '100 gr de arroz blanco o papa cocida',
+      '50 gr de ensalada verde',
+      '500 ml de agua'
+    ],
+    preparacion: 'Cocina la proteína a la plancha o al horno con condimentos naturales. Prepara el arroz blanco o cocina la papa entera con sal. Acompaña con la ensalada aliñada ligeramente. Esta es la comida más completa del día — no te la saltes.'
+  },
+  comida4: {
+    titulo: 'Comida 4',
+    ingredientes: [
+      '1 lata de atún al natural',
+      '50 gr de piña natural o en conserva (sin azúcar)',
+      '1 taza de té verde o de hierbas'
+    ],
+    preparacion: 'Escurre bien el atún y mézclalo con la piña cortada en trozos pequeños. Puedes agregar un toque de limón para realzar el sabor. Acompaña con el té sin azúcar. Es una merienda ligera, proteica y diurética ideal para la tarde.'
+  },
+  comida5: {
+    titulo: 'Comida 5',
+    ingredientes: [
+      'Atún al natural o 4 huevos (2 completos + 2 solo claras)',
+      '60 gr de espárragos',
+      '1 taza de té relajante (manzanilla o tilo)'
+    ],
+    preparacion: 'Cocina los espárragos al vapor o a la plancha con sal y ajo. Si eliges huevos, revuélvelos o cocínalos pochados. Si eliges atún, sírvelo directamente o marca ligeramente en sartén. La cena debe ser ligera — termina de comer al menos 2 horas antes de dormir.'
+  }
+}
+
+// ===== FUNCIONES MODAL NUTRICIÓN =====
+function abrirModalNutricion(clave) {
+  const datos = datosNutricion[clave]
+  if (!datos) return
+
+  document.getElementById('modal-nutr-titulo').textContent = datos.titulo
+  document.getElementById('modal-nutr-preparacion').textContent = datos.preparacion
+
+  const lista = document.getElementById('modal-nutr-ingredientes')
+  lista.innerHTML = ''
+  datos.ingredientes.forEach(ing => {
+    const li = document.createElement('li')
+    li.textContent = ing
+    lista.appendChild(li)
+  })
+
+  document.getElementById('modal-nutricion').classList.add('activo')
+}
+
+function cerrarModalNutricion(event) {
+  if (!event || event.target === document.getElementById('modal-nutricion')) {
+    document.getElementById('modal-nutricion').classList.remove('activo')
+  }
+}

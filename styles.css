@@ -202,7 +202,10 @@ img, video {
   text-align: center;
   padding-block: var(--space-md);
   opacity: 0.5;
+  margin-top: auto;
 }
+
+
 
 /* ===== GRID ===== */
 .grid {
@@ -267,6 +270,24 @@ img, video {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
   width: 100%;
+}
+
+#planes .card img {
+  width: calc(100% - 2 * var(--space-sm));  
+  height: clamp(160px, 28vw, 320px);         /* altura más compacta */
+  object-fit: cover;
+  position: relative;
+  border-radius: 12px;
+  margin: var(--space-sm) var(--space-sm) 0 var(--space-sm);  
+  transition: transform 0.4s ease;
+}
+
+#planes {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-md);  
 }
 
 /* ===== MODAL ===== */
@@ -729,7 +750,57 @@ img, video {
   padding: 1rem 3rem;
 }
 
+/* ===== NUTRICIÓN ===== */
+.inicio-dia {
+  text-align: center;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border: 1px solid rgba(0,255,102,0.15);
+  border-radius: 14px;
+  background: rgba(0,255,102,0.03);
+}
 
+.inicio-dia h2 {
+  color: var(--color-primary);
+  font-size: var(--text-lg);
+  margin-bottom: 0.5rem;
+}
+
+.inicio-dia p {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.nota-domingo {
+  text-align: center;
+  margin-top: var(--space-md);
+  color: var(--color-text);
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+.modal-nutr-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.modal-nutr-body h3 {
+  color: var(--color-primary);
+  font-size: var(--text-base);
+  margin-bottom: 0.5rem;
+}
+
+.modal-nutr-body p {
+  color: var(--color-text);
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+#comidas {
+  display: block;
+  padding-block: var(--space-lg);
+}
 
 
 

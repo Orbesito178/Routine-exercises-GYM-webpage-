@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes de entrenamiento y nutrición</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="/" class="logo">Logo</a>
+      <ul class="nav_links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ejercicios.html">Ejercicios</a></li>
+        <li><a href="nutricion.html">Nutrición</a></li>
+        <li><a href="rutina.html">Rutina</a></li>
+      </ul>
+      <button class="nav_toggle" aria-label="Menú">☰</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Inicio del día -->
+    <section class="grid-section container" id="comidas">
+
+      <div class="inicio-dia">
+        <h2>🌅 Al despertar</h2>
+        <p>Un shot de kéfir + 500 ml de agua</p>
+      </div>
+
+      <div class="grid">
+        <div class="card" onclick="abrirModalNutricion('comida1')">
+          <img src="src/comida 1.png" alt="Comida 1">
+          <span>Comida 1</span>
+        </div>
+        <div class="card" onclick="abrirModalNutricion('comida2')">
+          <img src="src/comida 2.jpg" alt="Comida 2">
+          <span>Comida 2</span>
+        </div>
+        <div class="card" onclick="abrirModalNutricion('comida3')">
+          <img src="src/comida 3.jpg" alt="Comida 3">
+          <span>Comida 3</span>
+        </div>
+        <div class="card" onclick="abrirModalNutricion('comida4')">
+          <img src="src/comida 4.jpg" alt="Comida 4">
+          <span>Comida 4</span>
+        </div>
+        <div class="card" onclick="abrirModalNutricion('comida5')">
+          <img src="src/comida 5.jpg" alt="Comida 5">
+          <span>Comida 5</span>
+        </div>
+      </div>
+
+      <p class="nota-domingo">🗓️ Los domingos hay una sola comida libre.</p>
+
+    </section>
+
+    <!-- MODAL NUTRICIÓN -->
+    <div id="modal-nutricion" class="modal-overlay" onclick="cerrarModalNutricion(event)">
+      <div class="modal-contenido">
+        <button class="modal-cerrar" onclick="cerrarModalNutricion()">✕</button>
+        <h2 id="modal-nutr-titulo"></h2>
+        <div class="modal-nutr-body">
+          <div>
+            <h3>🥗 Ingredientes</h3>
+            <ul id="modal-nutr-ingredientes" class="modal-tips"></ul>
+          </div>
+          <div>
+            <h3>👨‍🍳 Preparación</h3>
+            <p id="modal-nutr-preparacion"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer container">
+    <p>© 2026</p>
+  </footer>
+
+</body>
+</html>
