@@ -32,6 +32,18 @@ img, video {
   display: block;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ===== CONTENEDOR ===== */
 .container {
   width: min(90%, 1200px);
@@ -205,8 +217,6 @@ img, video {
   margin-top: auto;
 }
 
-
-
 /* ===== GRID ===== */
 .grid {
   display: grid;
@@ -218,17 +228,17 @@ img, video {
 .card {
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 16px;
-  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
   text-align: center;
-  min-height: 300px;
   background: rgba(255,255,255,0.03);
   transition: border-color 0.2s ease, background 0.2s ease;
   cursor: pointer;
+  min-height: 280px;
+  justify-content: flex-start;
+  padding: var(--space-sm);
+  gap: 0.75rem;
 }
 
 .card:hover {
@@ -238,13 +248,22 @@ img, video {
 
 .card img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
+  height: 180px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 0.5rem;
 }
 
 .card img[src=""] {
   display: none;
+}
+
+.card span {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  text-align: center;
+  width: 100%;
 }
 
 .card-texto {
@@ -266,28 +285,36 @@ img, video {
 }
 
 /* ===== PÁGINA PLANES ===== */
+#planes {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-md);
+}
+
 #opciones {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
   width: 100%;
 }
 
+#planes .card {
+  padding: 0;
+  overflow: hidden;
+  min-height: 400px;
+  position: relative;
+  border-radius: 20px;
+}
+
 #planes .card img {
-  width: calc(100% - 2 * var(--space-sm));  
-  height: clamp(160px, 28vw, 320px);         /* altura más compacta */
+  width: calc(100% - 2 * var(--space-sm));
+  height: clamp(160px, 28vw, 320px);
   object-fit: cover;
   position: relative;
   border-radius: 12px;
-  margin: var(--space-sm) var(--space-sm) 0 var(--space-sm);  
+  margin: var(--space-sm) var(--space-sm) 0 var(--space-sm);
   transition: transform 0.4s ease;
-}
-
-#planes {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-block: var(--space-md);  
 }
 
 /* ===== MODAL ===== */
@@ -399,7 +426,8 @@ img, video {
 }
 
 #partes-cuerpo,
-#planes {
+#planes,
+#comidas {
   display: block;
 }
 
@@ -453,7 +481,6 @@ img, video {
   opacity: 0.4;
 }
 
-/* Cards por nivel */
 #trenes .card { min-height: 260px; }
 #trenes .card a { font-size: var(--text-lg); color: var(--color-primary); font-weight: bold; text-decoration: none; }
 
@@ -483,14 +510,12 @@ img, video {
   opacity: 1;
 }
 
-/* Grids por nivel */
 #trenes .grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 800px; margin-inline: auto; }
 #trenInferior .grid, #trenSuperior .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 #cuadriceps .grid, #femoral .grid, #gluteos .grid,
 #dorsal .grid, #pectoral .grid, #hombros .grid,
 #biceps .grid, #triceps .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Animación de entrada */
 .grid-section.visible {
   animation: entrar 0.3s ease both;
 }
@@ -502,8 +527,13 @@ img, video {
 
 /* ===== RUTINAS ===== */
 .hero-rutina {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-block: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .hero-rutina h1 {
@@ -512,13 +542,24 @@ img, video {
   line-height: 1.2;
 }
 
-.hero-rutina p {
+.hero-rutina p,
+.hero-rutina-sub {
   color: var(--color-text);
   opacity: 0.7;
-  margin-top: var(--space-sm);
+  font-size: var(--text-lg);
+}
+
+.hero-rutina--small {
+  min-height: unset;
+  padding-block: var(--space-md) var(--space-sm);
+}
+
+.hero-rutina--small h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .rutina {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -802,56 +843,8 @@ img, video {
   padding-block: var(--space-lg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== MÓVIL (max 768px) ===== */
-@media (max-width: 768px) {
+/* ===== MÓVIL (max 480px) ===== */
+@media (max-width: 480px) {
 
   .nav_toggle {
     display: block;
@@ -874,9 +867,7 @@ img, video {
     display: flex;
   }
 
-  .nav_links li {
-    width: 100%;
-  }
+  .nav_links li { width: 100%; }
 
   .nav_links a {
     display: block;
@@ -888,17 +879,82 @@ img, video {
     background: rgba(0, 255, 102, 0.05);
   }
 
-  .nav_links a::after {
+  .nav_links a::after { display: none; }
+
+  .hero { min-height: 100svh; }
+  .hero h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+
+  #opciones { grid-template-columns: 1fr; }
+  #planes .card { min-height: 250px; }
+
+  .modal-contenido {
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  #modal-titulo { font-size: var(--text-base); }
+
+  .grid { grid-template-columns: 1fr; }
+  .card { min-height: 200px; }
+  .card img { height: 140px; }
+
+  #trenes .card { min-height: 140px; }
+  #trenInferior .card, #trenSuperior .card { min-height: 120px; }
+  #cuadriceps .card, #femoral .card, #gluteos .card,
+  #dorsal .card, #pectoral .card, #hombros .card,
+  #biceps .card, #triceps .card {
+    min-height: 100px;
+    padding: var(--space-sm);
+  }
+
+  .seccion-header { flex-direction: column; align-items: flex-start; }
+
+  .fila-grupos { flex-direction: column; }
+  .col-grupo { min-width: 100%; }
+
+  .btn-agregar-dia,
+  .btn-agregar-grupo { width: 100%; text-align: center; }
+
+  .hero-rutina { min-height: calc(100svh - 120px); }
+  .hero-rutina h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+
+  .inicio-dia { padding: var(--space-sm); }
+}
+
+/* ===== TABLET (481px - 768px) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .nav_toggle { display: block; }
+
+  .nav_links {
     display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid rgba(0, 255, 102, 0.1);
+    padding: 1rem 0;
   }
 
-  #opciones {
-    grid-template-columns: 1fr;
+  .nav_links.is-open { display: flex; }
+  .nav_links li { width: 100%; }
+
+  .nav_links a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    opacity: 1;
   }
 
-  .card {
-    min-height: 200px;
-  }
+  .nav_links a:hover { background: rgba(0, 255, 102, 0.05); }
+  .nav_links a::after { display: none; }
+
+  #opciones { grid-template-columns: 1fr; }
+  #planes .card { min-height: 300px; }
 
   .modal-contenido {
     width: 100%;
@@ -907,16 +963,13 @@ img, video {
     padding: 1.2rem;
   }
 
-  #modal-titulo {
-    font-size: var(--text-base);
-  }
+  #modal-titulo { font-size: var(--text-base); }
 
-  #trenes .grid,
-  #trenInferior .grid,
-  #trenSuperior .grid {
-    grid-template-columns: 1fr;
-  }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .card img { height: 160px; }
 
+  #trenes .grid { grid-template-columns: 1fr; }
+  #trenInferior .grid, #trenSuperior .grid { grid-template-columns: repeat(2, 1fr); }
   #cuadriceps .grid, #femoral .grid, #gluteos .grid,
   #dorsal .grid, #pectoral .grid, #hombros .grid,
   #biceps .grid, #triceps .grid {
@@ -925,7 +978,6 @@ img, video {
 
   #trenes .card { min-height: 160px; }
   #trenInferior .card, #trenSuperior .card { min-height: 140px; }
-
   #cuadriceps .card, #femoral .card, #gluteos .card,
   #dorsal .card, #pectoral .card, #hombros .card,
   #biceps .card, #triceps .card {
@@ -933,51 +985,31 @@ img, video {
     padding: var(--space-sm);
   }
 
-  .seccion-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .fila-grupos {
-    flex-direction: column;
-  }
-
-  .col-grupo {
-    min-width: 100%;
-  }
+  .seccion-header { flex-direction: column; align-items: flex-start; }
+  .fila-grupos { flex-direction: column; }
+  .col-grupo { min-width: 100%; }
 
   .btn-agregar-dia,
-  .btn-agregar-grupo {
-    width: 100%;
-    text-align: center;
-  }
+  .btn-agregar-grupo { width: 100%; text-align: center; }
 }
 
-/* ===== TABLET (769px - 1024px) ===== */
+/* ===== TABLET GRANDE (769px - 1024px) ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  .nav_links {
-    gap: 1.2rem;
-  }
+  .nav_links { gap: 1.2rem; }
 
-  #trenes .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  #opciones { grid-template-columns: 1fr 1fr; }
+  #planes .card { min-height: 350px; }
 
-  #trenInferior .grid,
-  #trenSuperior .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  #trenes .grid { grid-template-columns: repeat(2, 1fr); }
+  #trenInferior .grid, #trenSuperior .grid { grid-template-columns: repeat(2, 1fr); }
   #cuadriceps .grid, #femoral .grid, #gluteos .grid,
   #dorsal .grid, #pectoral .grid, #hombros .grid,
   #biceps .grid, #triceps .grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
-  .col-grupo {
-    min-width: 180px;
-  }
+  .col-grupo { min-width: 180px; }
 }
 
 /* ===== DESKTOP (1025px+) ===== */
@@ -999,7 +1031,5 @@ img, video {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  .col-grupo {
-    min-width: 220px;
-  }
+  .col-grupo { min-width: 220px; }
 }

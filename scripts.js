@@ -44,65 +44,64 @@ const linksGrupo = {
 const indiceEjercicios = {
   indicesCuadriceps: {
     sentadillaLibre:    { titulo: "Sentadilla libre",               descripcion: "4 series x 12 repeticiones (Descanso: 3 min).",                                              tips: ["Bajar mínimo hasta 90°.", "Llegar al fallo muscular en la última serie."],                                    video: "https://www.youtube.com/shorts/vuMU7-BKIZA?feature=share", link: "https://www.youtube.com/shorts/vuMU7-BKIZA?feature=share", imagen: "src/sentadilla libre.png" },
-    sentadillaSmith:    { titulo: "Sentadilla Smith",               descripcion: "2 series x 20 + 4 series x 10 repeticiones (Descanso: 2-3 min).",                            tips: ["Mantener la espalda recta.", "Controlar el descenso."],                                                       video: "https://www.youtube.com/shorts/rQw8GUzpj1I?feature=share", link: "https://www.youtube.com/shorts/rQw8GUzpj1I?feature=share", imagen: "img/sentadilla-smith.jpg" },
-    prensa45:           { titulo: "Prensa 45°",                     descripcion: "4 series x 12 repeticiones (Descanso: 2-3 min).",                                            tips: ["Pies en posición media.", "Bajar profundo sin despegar la espalda."],                                          video: "https://www.youtube.com/shorts/8gPJfr-2aRM?feature=share", link: "https://www.youtube.com/shorts/8gPJfr-2aRM?feature=share", imagen: "img/prensa45.jpg" },
-    extensionRodillas:  { titulo: "Extensión de rodillas",          descripcion: "2 series x 20 + 5 series x 12 repeticiones (Descanso: 2 min).",                              tips: ["Realizar una contracción de 2 segundos arriba.", "Controlar el descenso."],                                    video: "https://www.youtube.com/shorts/FtXooCm3wdQ?feature=share", link: "https://www.youtube.com/shorts/FtXooCm3wdQ?feature=share", imagen: "img/extension-rodillas.jpg" },
-    zancadasBarra:      { titulo: "Zancadas con barra",             descripcion: "4 series x 20 repeticiones (Descanso: 2 min).",                                              tips: ["Mantener el torso erguido.", "La rodilla delantera no debe superar la punta del pie."],                         video: "https://youtu.be/fPWs1u4KW1A", link: "https://youtu.be/fPWs1u4KW1A", imagen: "img/zancadas.jpg" },
-    haka:               { titulo: "Haka",                           descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",                                              tips: ["Mantener el core activo.", "Movimiento controlado."],                                                         video: "https://www.youtube.com/shorts/itmlCUc0P3k?feature=share", link: "https://www.youtube.com/shorts/itmlCUc0P3k?feature=share", imagen: "img/haka.jpg" },
+    sentadillaSmith:    { titulo: "Sentadilla Smith",               descripcion: "2 series x 20 + 4 series x 10 repeticiones (Descanso: 2-3 min).",                            tips: ["Mantener la espalda recta.", "Controlar el descenso."],                                                       video: "https://www.youtube.com/shorts/rQw8GUzpj1I?feature=share", link: "https://www.youtube.com/shorts/rQw8GUzpj1I?feature=share", imagen: "src/sentadilla smith.jpeg" },
+    prensa45:           { titulo: "Prensa 45°",                     descripcion: "4 series x 12 repeticiones (Descanso: 2-3 min).",                                            tips: ["Pies en posición media.", "Bajar profundo sin despegar la espalda."],                                          video: "https://www.youtube.com/shorts/8gPJfr-2aRM?feature=share", link: "https://www.youtube.com/shorts/8gPJfr-2aRM?feature=share", imagen: "src/prensa 45.jpeg" },
+    extensionRodillas:  { titulo: "Extensión de rodillas",          descripcion: "2 series x 20 + 5 series x 12 repeticiones (Descanso: 2 min).",                              tips: ["Realizar una contracción de 2 segundos arriba.", "Controlar el descenso."],                                    video: "https://www.youtube.com/shorts/FtXooCm3wdQ?feature=share", link: "https://www.youtube.com/shorts/FtXooCm3wdQ?feature=share", imagen: "src/extension rodillas.png" },
+    zancadasBarra:      { titulo: "Zancadas con barra",             descripcion: "4 series x 20 repeticiones (Descanso: 2 min).",                                              tips: ["Mantener el torso erguido.", "La rodilla delantera no debe superar la punta del pie."],                         video: "https://youtu.be/fPWs1u4KW1A", link: "https://youtu.be/fPWs1u4KW1A", imagen: "src/zancadas barra.jpeg" },
+    haka:               { titulo: "Haka",                           descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",                                              tips: ["Mantener el core activo.", "Movimiento controlado."],                                                         video: "https://www.youtube.com/shorts/itmlCUc0P3k?feature=share", link: "https://www.youtube.com/shorts/itmlCUc0P3k?feature=share", imagen: "src/haka.jpeg" },
   },
   indicesPiernas: {
-    pesoMuertoBarra:      { titulo: "Peso muerto con barra",              descripcion: "4 series x 8-12 repeticiones (Descanso: 3 min).",          tips: ["Mantener la espalda neutra.", "Empujar el suelo, no tirar de la barra."],                     video: "https://youtu.be/0XL4cZR2Ink", link: "https://youtu.be/0XL4cZR2Ink", imagen: "img/peso-muerto.jpg" },
-    curlAcostado:         { titulo: "Curl acostado (femoral)",            descripcion: "4 series x 10-12 repeticiones (Descanso: 2 min).",         tips: ["Contraer el glúteo durante el movimiento.", "No balancear las caderas."],                     video: "https://www.youtube.com/shorts/6JQflLWhKfg?feature=share", link: "https://www.youtube.com/shorts/6JQflLWhKfg?feature=share", imagen: "img/curl-acostado.jpg" },
-    zancadasEstaticas:    { titulo: "Zancadas estáticas",                 descripcion: "4 series x 12 repeticiones por pierna (Descanso: 2 min).", tips: ["Mantener el torso erguido.", "La rodilla trasera casi toca el suelo."],                      video: "https://www.youtube.com/shorts/FO5KJzV2qb8?feature=share", link: "https://www.youtube.com/shorts/FO5KJzV2qb8?feature=share", imagen: "img/zancadas-estaticas.jpg" },
-    bulgaras:             { titulo: "Búlgaras",                           descripcion: "4 series x 12 repeticiones por pierna (Descanso: 2 min).", tips: ["Apoyar el pie trasero en un banco.", "Llegar al fallo muscular en la última serie."],          video: "https://www.youtube.com/shorts/ba0-WEYVEpk?feature=share", link: "https://www.youtube.com/shorts/ba0-WEYVEpk?feature=share", imagen: "img/bulgaras.jpg" },
+    pesoMuertoBarra:      { titulo: "Peso muerto con barra",              descripcion: "4 series x 8-12 repeticiones (Descanso: 3 min).",          tips: ["Mantener la espalda neutra.", "Empujar el suelo, no tirar de la barra."],                     video: "https://youtu.be/0XL4cZR2Ink", link: "https://youtu.be/0XL4cZR2Ink", imagen: "src/peso muerto barra.png" },
+    curlAcostado:         { titulo: "Curl acostado (femoral)",            descripcion: "4 series x 10-12 repeticiones (Descanso: 2 min).",         tips: ["Contraer el glúteo durante el movimiento.", "No balancear las caderas."],                     video: "https://www.youtube.com/shorts/6JQflLWhKfg?feature=share", link: "https://www.youtube.com/shorts/6JQflLWhKfg?feature=share", imagen: "src/curl acostado.png" },
+    zancadasEstaticas:    { titulo: "Zancadas estáticas",                 descripcion: "4 series x 12 repeticiones por pierna (Descanso: 2 min).", tips: ["Mantener el torso erguido.", "La rodilla trasera casi toca el suelo."],                      video: "https://www.youtube.com/shorts/FO5KJzV2qb8?feature=share", link: "https://www.youtube.com/shorts/FO5KJzV2qb8?feature=share", imagen: "src/zancadas estaticas.png" },
+    bulgaras:             { titulo: "Búlgaras",                           descripcion: "4 series x 12 repeticiones por pierna (Descanso: 2 min).", tips: ["Apoyar el pie trasero en un banco.", "Llegar al fallo muscular en la última serie."],          video: "https://www.youtube.com/shorts/ba0-WEYVEpk?feature=share", link: "https://www.youtube.com/shorts/ba0-WEYVEpk?feature=share", imagen: "src/bulgaras.jpeg" },
   },
   indicesGluteos: {
-    hipThrust:            { titulo: "Hip thrust",                         descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",            tips: ["Apretar los glúteos al máximo arriba.", "Mantener la barbilla pegada al pecho."],             video: "https://www.youtube.com/shorts/OSOP3JAApGk?feature=share", link: "https://www.youtube.com/shorts/OSOP3JAApGk?feature=share", imagen: "img/hip-thrust.jpg" },
-    gluteoPatada:         { titulo: "Glúteo patada en máquina",           descripcion: "4 series x 15 repeticiones por pierna (Descanso: 2 min).", tips: ["Contraer el glúteo en el punto más alto.", "Movimiento controlado."],                        video: "https://www.youtube.com/shorts/B9Fqo0KqeWc?feature=share", link: "https://www.youtube.com/shorts/B9Fqo0KqeWc?feature=share", imagen: "img/gluteo-patada.jpg" },
-    gluteoMaquinaLumbar:  { titulo: "Glúteo en máquina lumbar",           descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",            tips: ["Ajustar bien el pad.", "No usar impulso."],                                                   video: "https://www.youtube.com/shorts/vHKx7t3RwUM?feature=share", link: "https://www.youtube.com/shorts/vHKx7t3RwUM?feature=share", imagen: "img/gluteo-lumbar.jpg" },
-    puentePelvisBarra:    { titulo: "Puente de pelvis con barra",         descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",            tips: ["Apoyar la barra con protección.", "Subir hasta alinear caderas con torso."],                  video: "https://www.youtube.com/shorts/eecT-JzxxVE?feature=share", link: "https://www.youtube.com/shorts/eecT-JzxxVE?feature=share", imagen: "img/puente-pelvis.jpg" },
-    puentePelvisMaquina:  { titulo: "Puente de pelvis en máquina",        descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",            tips: ["Controlar el descenso.", "Pausa de 1 segundo en la contracción."],                           video: "https://www.youtube.com/shorts/HCuDBzeh0F8?feature=share", link: "https://www.youtube.com/shorts/HCuDBzeh0F8?feature=share", imagen: "img/puente-maquina.jpg" },
-    jalonInvertido:       { titulo: "Jalón invertido polea baja",         descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",            tips: ["Mantener el core activo.", "Controlar el movimiento."],                                       video: "https://www.youtube.com/shorts/QkMZfCtBJm4?feature=share", link: "https://www.youtube.com/shorts/QkMZfCtBJm4?feature=share", imagen: "img/jalon-invertido.jpg" },
-    aductor:              { titulo: "Aductor en máquina",                 descripcion: "5 series x 20 repeticiones (Descanso: 1-2 min).",          tips: ["Movimiento lento y controlado.", "No dejar caer el peso."],                                   video: "https://www.youtube.com/shorts/76uNT_VMhPI?feature=share", link: "https://www.youtube.com/shorts/76uNT_VMhPI?feature=share", imagen: "img/aductor.jpg" },
-    abductor:             { titulo: "Abductor en máquina",                descripcion: "5 series x 20 repeticiones (Descanso: 1-2 min).",          tips: ["Abrir hasta el rango máximo cómodo.", "Mantener la espalda apoyada."],                       video: "https://www.youtube.com/shorts/lwiuET0ZKno?feature=share", link: "https://www.youtube.com/shorts/lwiuET0ZKno?feature=share", imagen: "img/abductor.jpg" },
-    sentadillaSumo:       { titulo: "Sentadilla sumo",                    descripcion: "4 series x 12 repeticiones (Descanso: 2-3 min).",          tips: ["Pies bien abiertos y puntas hacia afuera.", "Bajar mínimo hasta 90°."],                       video: "https://www.youtube.com/shorts/6N38tqZ-6F4?feature=share", link: "https://www.youtube.com/shorts/6N38tqZ-6F4?feature=share", imagen: "img/sentadilla-sumo.jpg" },
-    pesoMuertoUnilateral: { titulo: "Peso muerto unilateral en banco",    descripcion: "4 series x 15 repeticiones por pierna (Descanso: 2 min).", tips: ["Mantener la cadera nivelada.", "Controlar el movimiento de bajada."],                        video: "https://www.youtube.com/shorts/FAdf_rGP6rA?feature=share", link: "https://www.youtube.com/shorts/FAdf_rGP6rA?feature=share", imagen: "img/peso-muerto-unilateral.jpg" },
+    hipThrust:            { titulo: "Hip thrust",                         descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",            tips: ["Apretar los glúteos al máximo arriba.", "Mantener la barbilla pegada al pecho."],             video: "https://www.youtube.com/shorts/OSOP3JAApGk?feature=share", link: "https://www.youtube.com/shorts/OSOP3JAApGk?feature=share", imagen: "src/hip thrust.jpeg" },
+    gluteoPatada:         { titulo: "Glúteo patada en máquina",           descripcion: "4 series x 15 repeticiones por pierna (Descanso: 2 min).", tips: ["Contraer el glúteo en el punto más alto.", "Movimiento controlado."],                        video: "https://www.youtube.com/shorts/B9Fqo0KqeWc?feature=share", link: "https://www.youtube.com/shorts/B9Fqo0KqeWc?feature=share", imagen: "src/gluteo patada maquina.jpeg" },
+    gluteoMaquinaLumbar:  { titulo: "Glúteo en máquina lumbar",           descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",            tips: ["Ajustar bien el pad.", "No usar impulso."],                                                   video: "https://www.youtube.com/shorts/vHKx7t3RwUM?feature=share", link: "https://www.youtube.com/shorts/vHKx7t3RwUM?feature=share", imagen: "src/gluteo maquina lumbar.jpeg" },
+    puentePelvisBarra:    { titulo: "Puente de pelvis con barra",         descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",            tips: ["Apoyar la barra con protección.", "Subir hasta alinear caderas con torso."],                  video: "https://www.youtube.com/shorts/eecT-JzxxVE?feature=share", link: "https://www.youtube.com/shorts/eecT-JzxxVE?feature=share", imagen: "src/puente pelvis barra.png" },
+    puentePelvisMaquina:  { titulo: "Puente de pelvis en máquina",        descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",            tips: ["Controlar el descenso.", "Pausa de 1 segundo en la contracción."],                           video: "https://www.youtube.com/shorts/HCuDBzeh0F8?feature=share", link: "https://www.youtube.com/shorts/HCuDBzeh0F8?feature=share", imagen: "src/puente pelvis maquina.png" },
+    jalonInvertido:       { titulo: "Jalón invertido polea baja",         descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",            tips: ["Mantener el core activo.", "Controlar el movimiento."],                                       video: "https://www.youtube.com/shorts/QkMZfCtBJm4?feature=share", link: "https://www.youtube.com/shorts/QkMZfCtBJm4?feature=share", imagen: "src/jalon inverido polea baja.png" },
+    aductor:              { titulo: "Aductor en máquina",                 descripcion: "5 series x 20 repeticiones (Descanso: 1-2 min).",          tips: ["Movimiento lento y controlado.", "No dejar caer el peso."],                                   video: "https://www.youtube.com/shorts/76uNT_VMhPI?feature=share", link: "https://www.youtube.com/shorts/76uNT_VMhPI?feature=share", imagen: "src/aductor maquina.jpeg" },
+    abductor:             { titulo: "Abductor en máquina",                descripcion: "5 series x 20 repeticiones (Descanso: 1-2 min).",          tips: ["Abrir hasta el rango máximo cómodo.", "Mantener la espalda apoyada."],                       video: "https://www.youtube.com/shorts/lwiuET0ZKno?feature=share", link: "https://www.youtube.com/shorts/lwiuET0ZKno?feature=share", imagen: "src/abductor maquina.jpeg" },
+    sentadillaSumo:       { titulo: "Sentadilla sumo",                    descripcion: "4 series x 12 repeticiones (Descanso: 2-3 min).",          tips: ["Pies bien abiertos y puntas hacia afuera.", "Bajar mínimo hasta 90°."],                       video: "https://www.youtube.com/shorts/6N38tqZ-6F4?feature=share", link: "https://www.youtube.com/shorts/6N38tqZ-6F4?feature=share", imagen: "src/sentadilla sumo.jpeg" },
+    pesoMuertoUnilateral: { titulo: "Peso muerto unilateral en banco",    descripcion: "4 series x 15 repeticiones por pierna (Descanso: 2 min).", tips: ["Mantener la cadera nivelada.", "Controlar el movimiento de bajada."],                        video: "https://www.youtube.com/shorts/FAdf_rGP6rA?feature=share", link: "https://www.youtube.com/shorts/FAdf_rGP6rA?feature=share", imagen: "src/peso muerto unilateral.png" },
   },
   indicesEspalda: {
-    jalonAltoCerrado:   { titulo: "Jalón alto al pecho",                  descripcion: "4 series x 12-25 repeticiones (Descanso: 2 min).", tips: ["Llevar la barra hasta el pecho.", "Codos hacia abajo y atrás."],                   video: "https://www.youtube.com/shorts/DXkatWVCmbc?feature=share", link: "https://www.youtube.com/shorts/DXkatWVCmbc?feature=share", imagen: "img/jalon-alto.jpg" },
-    jalonSentadoPolea:  { titulo: "Jalón sentado polea",                  descripcion: "4 series x 20 repeticiones (Descanso: 2 min).",    tips: ["Tirar con los codos.", "Torso ligeramente inclinado hacia atrás."],               video: "https://www.youtube.com/shorts/iyOM6y5ADAQ?feature=share", link: "https://www.youtube.com/shorts/iyOM6y5ADAQ?feature=share", imagen: "img/jalon-sentado.jpg" },
-    jalonMaquinaHammer: { titulo: "Jalón máquina Hammer",                 descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",    tips: ["Agarre neutro para mayor activación.", "Contraer la espalda al final."],          video: "https://youtu.be/9KUgSrLOGvs", link: "https://youtu.be/9KUgSrLOGvs", imagen: "img/jalon-hammer.jpg" },
-    remoMancuerna:      { titulo: "Remo con mancuerna",                   descripcion: "4 series x 15 repeticiones por brazo (Descanso: 2 min).", tips: ["Apoyar rodilla y mano en el banco.", "Subir el codo lo más alto posible."],  video: "https://www.youtube.com/shorts/ge0lRNxSMNk?feature=share", link: "https://www.youtube.com/shorts/ge0lRNxSMNk?feature=share", imagen: "img/remo-mancuerna.jpg" },
-    jalonPieBrazos:     { titulo: "Jalón de pie brazos extendidos",       descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",    tips: ["Brazos casi extendidos.", "Contraer la espalda al bajar."],                       video: "https://www.youtube.com/shorts/ZN9QVESZUkE?feature=share", link: "https://www.youtube.com/shorts/ZN9QVESZUkE?feature=share", imagen: "img/jalon-pie.jpg" },
-    bancoLumbar:        { titulo: "Banco lumbar",                         descripcion: "4 series x 10-12 repeticiones (Descanso: 2 min).",  tips: ["Bajar controlado hasta 90°.", "No hiperextender en la subida."],                  video: "https://www.youtube.com/shorts/5beOj4cx1oc?feature=share", link: "https://www.youtube.com/shorts/5beOj4cx1oc?feature=share", imagen: "img/banco-lumbar.jpg" },
+    jalonAltoCerrado:   { titulo: "Jalón alto al pecho",                  descripcion: "4 series x 12-25 repeticiones (Descanso: 2 min).", tips: ["Llevar la barra hasta el pecho.", "Codos hacia abajo y atrás."],                   video: "https://www.youtube.com/shorts/DXkatWVCmbc?feature=share", link: "https://www.youtube.com/shorts/DXkatWVCmbc?feature=share", imagen: "src/jalon cerrado.png" },
+    jalonSentadoPolea:  { titulo: "Jalón sentado polea",                  descripcion: "4 series x 20 repeticiones (Descanso: 2 min).",    tips: ["Tirar con los codos.", "Torso ligeramente inclinado hacia atrás."],               video: "https://www.youtube.com/shorts/iyOM6y5ADAQ?feature=share", link: "https://www.youtube.com/shorts/iyOM6y5ADAQ?feature=share", imagen: "src/remo polea baja.jpeg" },
+    jalonMaquinaHammer: { titulo: "Jalón máquina Hammer",                 descripcion: "4 series x 15 repeticiones (Descanso: 2 min).",    tips: ["Agarre neutro para mayor activación.", "Contraer la espalda al final."],          video: "https://youtu.be/9KUgSrLOGvs", link: "https://youtu.be/9KUgSrLOGvs", imagen: "src/jalon maquina hammer.jpeg" },
+    remoMancuerna:      { titulo: "Remo con mancuerna",                   descripcion: "4 series x 15 repeticiones por brazo (Descanso: 2 min).", tips: ["Apoyar rodilla y mano en el banco.", "Subir el codo lo más alto posible."],  video: "https://www.youtube.com/shorts/ge0lRNxSMNk?feature=share", link: "https://www.youtube.com/shorts/ge0lRNxSMNk?feature=share", imagen: "src/remo mancuerna.png" },
+    bancoLumbar:        { titulo: "Banco lumbar",                         descripcion: "4 series x 10-12 repeticiones (Descanso: 2 min).",  tips: ["Bajar controlado hasta 90°.", "No hiperextender en la subida."],                  video: "https://www.youtube.com/shorts/5beOj4cx1oc?feature=share", link: "https://www.youtube.com/shorts/5beOj4cx1oc?feature=share", imagen: "src/banco lumbar.jpeg" },
   },
   indicesPectoral: {
-    pressAltoBarra:       { titulo: "Press alto con barra",               descripcion: "4 series x 12 repeticiones (Descanso: 2-3 min).", tips: ["Agarre ligeramente más ancho que hombros.", "Bajar controlado hasta el pecho."],  video: "https://www.youtube.com/shorts/54XscRwUyz4?feature=share", link: "https://www.youtube.com/shorts/54XscRwUyz4?feature=share", imagen: "img/press-alto.jpg" },
-    aperturasMancuernas:  { titulo: "Aperturas con mancuernas plano",     descripcion: "4 series x 10 repeticiones (Descanso: 2 min).",    tips: ["Ligera flexión en codos.", "Sentir el estiramiento en la bajada."],              video: "https://youtu.be/OrlXQdNwNwM", link: "https://youtu.be/OrlXQdNwNwM", imagen: "img/aperturas.jpg" },
+    pressAltoBarra:       { titulo: "Press alto con barra",               descripcion: "4 series x 12 repeticiones (Descanso: 2-3 min).", tips: ["Agarre ligeramente más ancho que hombros.", "Bajar controlado hasta el pecho."],  video: "https://www.youtube.com/shorts/54XscRwUyz4?feature=share", link: "https://www.youtube.com/shorts/54XscRwUyz4?feature=share", imagen: "src/press alto con barra.jpeg" },
+    aperturasMancuernas:  { titulo: "Aperturas con mancuernas plano",     descripcion: "4 series x 10 repeticiones (Descanso: 2 min).",    tips: ["Ligera flexión en codos.", "Sentir el estiramiento en la bajada."],              video: "https://youtu.be/OrlXQdNwNwM", link: "https://youtu.be/OrlXQdNwNwM", imagen: "src/aperturas mancuernas.png" },
   },
   indicesHombros: {
-    elevacionLateral:       { titulo: "Elevación lateral con mancuernas",   descripcion: "4 series x 25 repeticiones (Descanso: 1-2 min).",   tips: ["Levantar hasta la altura del hombro.", "Ligera inclinación del torso."],          video: "https://www.youtube.com/shorts/Vh_Kjw3O-DQ?feature=share", link: "https://www.youtube.com/shorts/Vh_Kjw3O-DQ?feature=share", imagen: "img/elevacion-lateral.jpg" },
-    elevacionFrontal:       { titulo: "Elevación frontal con mancuernas",   descripcion: "4 series x 30 repeticiones (Descanso: 1-2 min).",   tips: ["Subir hasta la altura de los ojos.", "No usar impulso del torso."],              video: "https://www.youtube.com/shorts/jk7YrK79ciA?feature=share", link: "https://www.youtube.com/shorts/jk7YrK79ciA?feature=share", imagen: "img/elevacion-frontal.jpg" },
-    pressMilitarMaquina:    { titulo: "Press militar en máquina",           descripcion: "4 series x 12-15 repeticiones (Descanso: 2 min).",  tips: ["Asiento a altura correcta.", "No bloquear los codos arriba."],                   video: "https://youtu.be/Wz8ifiRefB0", link: "https://youtu.be/Wz8ifiRefB0", imagen: "img/press-militar-maquina.jpg" },
-    pressMilitarMancuernas: { titulo: "Press militar con mancuernas",       descripcion: "4 series x 20 repeticiones (Descanso: 2 min).",    tips: ["Codos a 90° al inicio.", "Mantener el core activo."],                           video: "https://www.youtube.com/shorts/IuR427toLXE?feature=share", link: "https://www.youtube.com/shorts/IuR427toLXE?feature=share", imagen: "img/press-militar-mancuernas.jpg" },
-    pecdekInvertido:        { titulo: "Pecdek invertido",                   descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",    tips: ["Brazos a altura de hombros.", "Contraer deltoides posteriores al final."],       video: "https://www.youtube.com/shorts/20Y8lrIe68o?feature=share", link: "https://www.youtube.com/shorts/20Y8lrIe68o?feature=share", imagen: "img/pecdek.jpg" },
+    elevacionLateral:       { titulo: "Elevación lateral con mancuernas",   descripcion: "4 series x 25 repeticiones (Descanso: 1-2 min).",   tips: ["Levantar hasta la altura del hombro.", "Ligera inclinación del torso."],          video: "https://www.youtube.com/shorts/Vh_Kjw3O-DQ?feature=share", link: "https://www.youtube.com/shorts/Vh_Kjw3O-DQ?feature=share", imagen: "src/elevacion lateral.png" },
+    elevacionFrontal:       { titulo: "Elevación frontal con mancuernas",   descripcion: "4 series x 30 repeticiones (Descanso: 1-2 min).",   tips: ["Subir hasta la altura de los ojos.", "No usar impulso del torso."],              video: "https://www.youtube.com/shorts/jk7YrK79ciA?feature=share", link: "https://www.youtube.com/shorts/jk7YrK79ciA?feature=share", imagen: "src/elevacion frontal.png" },
+    pressMilitarMaquina:    { titulo: "Press militar en máquina",           descripcion: "4 series x 12-15 repeticiones (Descanso: 2 min).",  tips: ["Asiento a altura correcta.", "No bloquear los codos arriba."],                   video: "https://youtu.be/Wz8ifiRefB0", link: "https://youtu.be/Wz8ifiRefB0", imagen: "src/press militar.jpeg" },
+    pressMilitarMancuernas: { titulo: "Press militar con mancuernas",       descripcion: "4 series x 20 repeticiones (Descanso: 2 min).",    tips: ["Codos a 90° al inicio.", "Mantener el core activo."],                           video: "https://www.youtube.com/shorts/IuR427toLXE?feature=share", link: "https://www.youtube.com/shorts/IuR427toLXE?feature=share", imagen: "src/press militar mancuernas.jpeg" },
+    pecdekInvertido:        { titulo: "Pecdek invertido",                   descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",    tips: ["Brazos a altura de hombros.", "Contraer deltoides posteriores al final."],       video: "https://www.youtube.com/shorts/20Y8lrIe68o?feature=share", link: "https://www.youtube.com/shorts/20Y8lrIe68o?feature=share", imagen: "src/pecdeck invertido.jpeg" },
   },
   indicesBiceps: {
-    curlBarraPolea:    { titulo: "Curl barra en polea baja",               descripcion: "4 series x 20 repeticiones (Descanso: 1-2 min).", tips: ["Codos pegados al cuerpo.", "Contracción completa arriba."],                      video: "https://youtu.be/BNxez0L-9LQ", link: "https://youtu.be/BNxez0L-9LQ", imagen: "img/curl-barra-polea.jpg" },
-    curlMartillo:      { titulo: "Curl con mancuernas martillo",           descripcion: "4 series x 12 repeticiones (Descanso: 1-2 min).", tips: ["Agarre neutro (pulgares arriba).", "No balancear el torso."],                    video: "https://www.youtube.com/shorts/07D2fR_0iro?feature=share", link: "https://www.youtube.com/shorts/07D2fR_0iro?feature=share", imagen: "img/curl-martillo.jpg" },
-    curlPieBarra:      { titulo: "Curl de pie con barra",                  descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",   tips: ["Codos fijos a los costados.", "Bajar de forma controlada."],                    video: "https://www.youtube.com/shorts/l-BPupny6cM?feature=share", link: "https://www.youtube.com/shorts/l-BPupny6cM?feature=share", imagen: "img/curl-pie-barra.jpg" },
-    curlPieMancuernas: { titulo: "Curl de pie con mancuernas",             descripcion: "4 series x 30 repeticiones (Descanso: 1-2 min).", tips: ["Alternar brazos o simultáneo.", "Girar la muñeca en la subida."],               video: "https://youtu.be/LAO7HuppUm0", link: "https://youtu.be/LAO7HuppUm0", imagen: "img/curl-pie-mancuernas.jpg" },
-    curlPiePoleaBaja:  { titulo: "Curl de pie polea baja",                 descripcion: "4 series x 20 repeticiones (Descanso: 1-2 min).", tips: ["Tensión constante.", "Codos fijos, solo mover el antebrazo."],                   video: "https://www.youtube.com/shorts/0ABFQEui-Ik?feature=share", link: "https://www.youtube.com/shorts/0ABFQEui-Ik?feature=share", imagen: "img/curl-polea-baja.jpg" },
+    curlBarraPolea:    { titulo: "Curl barra en polea baja",               descripcion: "4 series x 20 repeticiones (Descanso: 1-2 min).", tips: ["Codos pegados al cuerpo.", "Contracción completa arriba."],                      video: "https://youtu.be/BNxez0L-9LQ", link: "https://youtu.be/BNxez0L-9LQ", imagen: "src/curl barra polea baja.jpeg" },
+    curlMartillo:      { titulo: "Curl con mancuernas martillo",           descripcion: "4 series x 12 repeticiones (Descanso: 1-2 min).", tips: ["Agarre neutro (pulgares arriba).", "No balancear el torso."],                    video: "https://www.youtube.com/shorts/07D2fR_0iro?feature=share", link: "https://www.youtube.com/shorts/07D2fR_0iro?feature=share", imagen: "src/curl mancuernas martillo.jpeg" },
+    curlPieBarra:      { titulo: "Curl de pie con barra",                  descripcion: "4 series x 12 repeticiones (Descanso: 2 min).",   tips: ["Codos fijos a los costados.", "Bajar de forma controlada."],                    video: "https://www.youtube.com/shorts/l-BPupny6cM?feature=share", link: "https://www.youtube.com/shorts/l-BPupny6cM?feature=share", imagen: "src/curl de pie barra.png" },
+    curlPieMancuernas: { titulo: "Curl de pie con mancuernas",             descripcion: "4 series x 30 repeticiones (Descanso: 1-2 min).", tips: ["Alternar brazos o simultáneo.", "Girar la muñeca en la subida."],               video: "https://youtu.be/LAO7HuppUm0", link: "https://youtu.be/LAO7HuppUm0", imagen: "src/curl de pie mancuernas.png" },
+    curlPiePoleaBaja:  { titulo: "Curl de pie polea baja",                 descripcion: "4 series x 20 repeticiones (Descanso: 1-2 min).", tips: ["Tensión constante.", "Codos fijos, solo mover el antebrazo."],                   video: "https://www.youtube.com/shorts/0ABFQEui-Ik?feature=share", link: "https://www.youtube.com/shorts/0ABFQEui-Ik?feature=share", imagen: "src/curl de pie polea baja.jpeg" },
   },
   indicesTriceps: {
-    extensionPoleaSoga:  { titulo: "Extensión polea alta soga",            descripcion: "3 series x 20 repeticiones (Descanso: 1-2 min).",        tips: ["Separar la soga al final.", "Codos fijos y pegados al cuerpo."],                 video: "https://youtu.be/OlZnLb3S8pk", link: "https://youtu.be/OlZnLb3S8pk", imagen: "img/extension-soga.jpg" },
-    patadaMulaMancuerna: { titulo: "Patada de mula con mancuerna",         descripcion: "3 series x 15 repeticiones por brazo (Descanso: 1-2 min).", tips: ["Codo fijo a 90° al inicio.", "Extender completamente el brazo atrás."], video: "https://www.youtube.com/shorts/sYk-67UhxJk?feature=share", link: "https://www.youtube.com/shorts/sYk-67UhxJk?feature=share", imagen: "img/patada-mula.jpg" },
+    extensionPoleaSoga:  { titulo: "Extensión polea alta soga",            descripcion: "3 series x 20 repeticiones (Descanso: 1-2 min).",        tips: ["Separar la soga al final.", "Codos fijos y pegados al cuerpo."],                 video: "https://youtu.be/OlZnLb3S8pk", link: "https://youtu.be/OlZnLb3S8pk", imagen: "src/extension polea alta.jpeg" },
+    patadaMulaMancuerna: { titulo: "Patada de mula con mancuerna",         descripcion: "3 series x 15 repeticiones por brazo (Descanso: 1-2 min).", tips: ["Codo fijo a 90° al inicio.", "Extender completamente el brazo atrás."], video: "https://www.youtube.com/shorts/sYk-67UhxJk?feature=share", link: "https://www.youtube.com/shorts/sYk-67UhxJk?feature=share", imagen: "src/patada mula mancuerna.jpeg" },
   },
   indicesCardio: {
-    saltossentadilla: { titulo: "Saltos de sentadilla",  descripcion: "4 series al fallo (Descanso: 2 min).",        tips: ["Aterrizar suavemente con las rodillas semiflexionadas.", "Mantener el core activo."],   video: "https://www.youtube.com/shorts/LLB7iwq3IG8?feature=share", link: "https://www.youtube.com/shorts/LLB7iwq3IG8?feature=share", imagen: "img/saltos-sentadilla.jpg" },
-    polichilenos:     { titulo: "Polichilenos",          descripcion: "4 series x 25 repeticiones (Descanso: 1 min).", tips: ["Movimiento explosivo.", "Mantener el ritmo constante."],                              video: "https://www.youtube.com/shorts/V8gqMGPfAQY?feature=share", link: "https://www.youtube.com/shorts/V8gqMGPfAQY?feature=share", imagen: "img/polichilenos.jpg" },
-    burpees:          { titulo: "Burpees",               descripcion: "4 series x 10 repeticiones (Descanso: 1-2 min).", tips: ["Movimiento fluido y continuo.", "Saltar con brazos extendidos arriba."],          video: "https://www.youtube.com/shorts/7xWbUkbm23g?feature=share", link: "https://www.youtube.com/shorts/7xWbUkbm23g?feature=share", imagen: "img/burpees.jpg" },
-    trote:            { titulo: "Trote",                 descripcion: "20-30 minutos a ritmo moderado (Descanso: según necesidad).", tips: ["Mantener una cadencia constante.", "Respiración rítmica y controlada."],    video: "https://www.youtube.com/shorts/PFo2afxqzHI?feature=share", link: "https://www.youtube.com/shorts/PFo2afxqzHI?feature=share", imagen: "img/trote.jpg" },
+    saltossentadilla: { titulo: "Saltos de sentadilla",  descripcion: "4 series al fallo (Descanso: 2 min).",        tips: ["Aterrizar suavemente con las rodillas semiflexionadas.", "Mantener el core activo."],   video: "https://www.youtube.com/shorts/LLB7iwq3IG8?feature=share", link: "https://www.youtube.com/shorts/LLB7iwq3IG8?feature=share", imagen: "src/saltos sentadilla.png" },
+    polichilenos:     { titulo: "Polichilenos",          descripcion: "4 series x 25 repeticiones (Descanso: 1 min).", tips: ["Movimiento explosivo.", "Mantener el ritmo constante."],                              video: "https://www.youtube.com/shorts/V8gqMGPfAQY?feature=share", link: "https://www.youtube.com/shorts/V8gqMGPfAQY?feature=share", imagen: "src/polichilenos.jpeg" },
+    burpees:          { titulo: "Burpees",               descripcion: "4 series x 10 repeticiones (Descanso: 1-2 min).", tips: ["Movimiento fluido y continuo.", "Saltar con brazos extendidos arriba."],          video: "https://www.youtube.com/shorts/7xWbUkbm23g?feature=share", link: "https://www.youtube.com/shorts/7xWbUkbm23g?feature=share", imagen: "src/burpees.jpeg" },
+    trote:            { titulo: "Trote",                 descripcion: "20-30 minutos a ritmo moderado (Descanso: según necesidad).", tips: ["Mantener una cadencia constante.", "Respiración rítmica y controlada."],    video: "https://www.youtube.com/shorts/PFo2afxqzHI?feature=share", link: "https://www.youtube.com/shorts/PFo2afxqzHI?feature=share", imagen: "src/trote.jpeg" },
   }
 }
 
@@ -347,130 +346,203 @@ function exportarPDF() {
   const { jsPDF } = window.jspdf
   const doc = new jsPDF()
 
-  const verde = [0, 255, 102]
-  const gris = [194, 205, 213]
-  const blanco = [255, 255, 255]
-  const oscuro = [20, 20, 20]
+  const verde       = [0, 255, 102]
+  const verdeOscuro = [0, 80, 40]
+  const gris        = [180, 190, 195]
+  const blanco      = [240, 240, 240]
+  const negro       = [0, 0, 0]
+  const fondoFila1  = [18, 18, 18]
+  const fondoFila2  = [28, 28, 28]
 
   const pageW = doc.internal.pageSize.getWidth()
-  let y = 20
+  const pageH = doc.internal.pageSize.getHeight()
+  let y = 0
+
+  const fondoTotal = () => {
+    doc.setFillColor(...negro)
+    doc.rect(0, 0, pageW, pageH, 'F')
+  }
+  fondoTotal()
 
   // ===== TÍTULO =====
-  doc.setFillColor(0, 0, 0)
-  doc.rect(0, 0, pageW, 300, 'F')
-
-  doc.setFontSize(22)
+  y = 18
+  doc.setFontSize(16)
   doc.setTextColor(...verde)
   doc.setFont('helvetica', 'bold')
   doc.text('Mi Rutina de Entrenamiento', pageW / 2, y, { align: 'center' })
-  y += 6
+  y += 4
 
   doc.setDrawColor(...verde)
-  doc.setLineWidth(0.5)
+  doc.setLineWidth(0.4)
   doc.line(14, y, pageW - 14, y)
-  y += 10
-
-  // ===== ENCABEZADOS DE TABLA =====
-  const colDia      = 14
-  const colCuerpo   = 45
-  const colEjercicio= 85
-  const colLink     = 155
-  const colImg      = 175
-  const rowH        = 28
-
-  // Fondo encabezado
-  doc.setFillColor(0, 40, 20)
-  doc.rect(14, y - 5, pageW - 28, 10, 'F')
-
-  doc.setFontSize(8)
-  doc.setTextColor(...verde)
-  doc.setFont('helvetica', 'bold')
-  doc.text('DÍA',           colDia,       y)
-  doc.text('PARTE',         colCuerpo,    y)
-  doc.text('EJERCICIO',     colEjercicio, y)
-  doc.text('REPS',          148,          y)
-  doc.text('LINK',          colLink,      y)
   y += 8
 
-  // ===== RECORRER DÍAS =====
-  const diasBloques = document.querySelectorAll('.dia-bloque')
+  // ===== COLUMNAS (portrait 210mm) =====
+  const col = {
+    dia:       14,
+    parte:     40,
+    ejercicio: 72,
+    reps:      138,
+    img:       153,
+    link:      173
+  }
+  const rowH    = 20
+  const imgSize = 14
 
-  diasBloques.forEach((divDia, index) => {
+  // ===== FUNCIÓN ENCABEZADO =====
+  const dibujarEncabezado = () => {
+    doc.setFillColor(...verdeOscuro)
+    doc.rect(14, y - 5, pageW - 28, 10, 'F')
+    doc.setFontSize(7)
+    doc.setFont('helvetica', 'bold')
+    doc.setTextColor(...verde)
+    doc.text('DÍA',       col.dia,       y)
+    doc.text('PARTE',     col.parte,     y)
+    doc.text('EJERCICIO', col.ejercicio, y)
+    doc.text('REPS',      col.reps,      y)
+    doc.text('IMG',       col.img,       y)
+    doc.text('LINK',      col.link,      y)
+    y += 7
+  }
+  dibujarEncabezado()
+
+  // ===== RECORRER DÍAS =====
+  let filaIndex = 0
+
+  document.querySelectorAll('.dia-bloque').forEach(divDia => {
 
     const selectDia = divDia.querySelector('.dia-cabecera select')
-    const nombreDia = selectDia ? selectDia.value : '—'
+    const nombreDia = selectDia?.value || '—'
+    let primerFilaDia = true
 
-    const columnas = divDia.querySelectorAll('.col-grupo')
+    divDia.querySelectorAll('.col-grupo').forEach(col_grupo => {
 
-    columnas.forEach((col, i) => {
-      const selects = col.querySelectorAll('select')
-      if (selects.length < 3) return
+      const selectGrupo = col_grupo.querySelector('select')
+      const nombreGrupo = selectGrupo?.value || '—'
+      const claveGrupo  = partesCuerpo[nombreGrupo]
+      let primerFilaGrupo = true
 
-      const nombreGrupo    = selects[0].value
-      const claveEjercicio = selects[1].value
-      const reps           = selects[2].value
+      col_grupo.querySelectorAll('.ejercicio-item').forEach(ejItem => {
 
-      if (!claveEjercicio || !nombreGrupo) return
+        const filaSelect = ejItem.querySelector('div')
+        const selects    = filaSelect ? filaSelect.querySelectorAll('select') : []
+        if (selects.length < 2) return
 
-      const claveGrupo = partesCuerpo[nombreGrupo]
-      const datos = indiceEjercicios[claveGrupo]?.[claveEjercicio]
-      if (!datos) return
+        const claveEjercicio = selects[0].value
+        const reps           = selects[1]?.value || '—'
 
-      // Nueva página si no hay espacio
-      if (y > 260) {
-        doc.addPage()
-        doc.setFillColor(0, 0, 0)
-        doc.rect(0, 0, pageW, 300, 'F')
-        y = 20
-      }
+        if (!claveEjercicio || !claveGrupo) return
 
-      // Fondo alterno de filas
-      if ((index + i) % 2 === 0) {
-        doc.setFillColor(15, 15, 15)
-      } else {
-        doc.setFillColor(25, 25, 25)
-      }
-      doc.rect(14, y - 4, pageW - 28, rowH, 'F')
+        const datos = indiceEjercicios[claveGrupo]?.[claveEjercicio]
+        if (!datos) return
 
-      // Línea separadora
-      doc.setDrawColor(40, 40, 40)
-      doc.setLineWidth(0.2)
-      doc.line(14, y - 4, pageW - 28 + 14, y - 4)
+        // ===== NUEVA PÁGINA =====
+        if (y + rowH > pageH - 14) {
+          doc.addPage()
+          fondoTotal()
+          y = 20
+          dibujarEncabezado()
+          primerFilaDia   = true
+          primerFilaGrupo = true
+        }
 
-      // Texto — Día
-      doc.setFontSize(8)
-      doc.setFont('helvetica', 'bold')
-      doc.setTextColor(...verde)
-      doc.text(nombreDia, colDia, y + 4)
+        // ===== FONDO ALTERNO =====
+        doc.setFillColor(...(filaIndex % 2 === 0 ? fondoFila1 : fondoFila2))
+        doc.rect(14, y - 3, pageW - 28, rowH, 'F')
 
-      // Texto — Parte del cuerpo
-      doc.setFont('helvetica', 'normal')
-      doc.setTextColor(...gris)
-      doc.text(nombreGrupo, colCuerpo, y + 4)
+        doc.setDrawColor(40, 40, 40)
+        doc.setLineWidth(0.15)
+        doc.line(14, y - 3, pageW - 14, y - 3)
 
-      // Texto — Ejercicio (puede ser largo, lo corta)
-      const tituloCorto = datos.titulo.length > 28
-        ? datos.titulo.substring(0, 25) + '...'
-        : datos.titulo
-      doc.setTextColor(...blanco)
-      doc.text(tituloCorto, colEjercicio, y + 4)
+        const textY = y + rowH / 2 - 2
 
-      // Texto — Repeticiones
-      doc.setTextColor(...gris)
-      doc.text(reps || '—', 148, y + 4)
+        // DÍA — solo primera fila del día
+        if (primerFilaDia) {
+          doc.setFontSize(7.5)
+          doc.setFont('helvetica', 'bold')
+          doc.setTextColor(...verde)
+          doc.text(nombreDia, col.dia, textY)
+          primerFilaDia = false
+        }
 
-      // Link clickeable
-      doc.setTextColor(...verde)
-      doc.textWithLink('Ver ↗', colLink, y + 4, { url: linksGrupo[claveGrupo] })
+        // PARTE — solo primera fila del grupo
+        if (primerFilaGrupo) {
+          doc.setFontSize(7)
+          doc.setFont('helvetica', 'normal')
+          doc.setTextColor(...gris)
+          doc.text(nombreGrupo, col.parte, textY)
+          primerFilaGrupo = false
+        }
 
-      y += rowH
+        // EJERCICIO
+        const titulo = datos.titulo.length > 26
+          ? datos.titulo.substring(0, 23) + '...'
+          : datos.titulo
+        doc.setFontSize(7)
+        doc.setFont('helvetica', 'normal')
+        doc.setTextColor(...blanco)
+        doc.text(titulo, col.ejercicio, textY)
+
+        // REPS
+        doc.setTextColor(...gris)
+        doc.text(reps, col.reps, textY)
+
+        // IMAGEN
+        try {
+          const imgEl = ejItem.querySelector('img.rutina-img')
+          if (imgEl && imgEl.complete && imgEl.naturalWidth > 0) {
+            const canvas = document.createElement('canvas')
+            canvas.width  = imgEl.naturalWidth
+            canvas.height = imgEl.naturalHeight
+            canvas.getContext('2d').drawImage(imgEl, 0, 0)
+            const imgData = canvas.toDataURL('image/jpeg', 0.7)
+            const imgY = y + (rowH - imgSize) / 2 - 3
+            doc.addImage(imgData, 'JPEG', col.img, imgY, imgSize, imgSize)
+          } else {
+            doc.setTextColor(80, 80, 80)
+            doc.setFontSize(6)
+            doc.text('—', col.img, textY)
+          }
+        } catch (e) {
+          doc.setTextColor(80, 80, 80)
+          doc.setFontSize(6)
+          doc.text('—', col.img, textY)
+        }
+
+        // LINK
+        doc.setFontSize(7)
+        doc.setTextColor(...verde)
+        const urlLink = `${window.location.origin}/${linksGrupo[claveGrupo]}?modal=${claveEjercicio}`
+        doc.textWithLink('Ver ↗', col.link, textY, { url: urlLink })
+
+        y += rowH
+        filaIndex++
+      })
     })
+
+    // Separador entre días
+    if (y < pageH - 20) {
+      doc.setDrawColor(...verdeOscuro)
+      doc.setLineWidth(0.3)
+      doc.line(14, y, pageW - 14, y)
+      y += 4
+    }
   })
 
   // ===== LÍNEA FINAL =====
   doc.setDrawColor(...verde)
   doc.setLineWidth(0.5)
-  doc.line(14, y, pageW - 14, y)
+  doc.line(14, y + 2, pageW - 14, y + 2)
+
+  // ===== PIE DE PÁGINA =====
+  doc.setFontSize(6)
+  doc.setTextColor(...gris)
+  doc.text(
+    `Generado el ${new Date().toLocaleDateString('es-ES')}`,
+    pageW / 2,
+    pageH - 6,
+    { align: 'center' }
+  )
 
   doc.save('mi-rutina.pdf')
 }
